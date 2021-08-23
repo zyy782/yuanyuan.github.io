@@ -101,10 +101,10 @@ for (let i = 0; i < data.length; i++) {
 console.log(result)
 
 ```
-观察原数据与结果数据的格式差异：
-关键点在于team属性，需要按照team的分层情况以对象的合适进行输出。
+观察原数据与结果数据的格式差异：    
+关键点在于team属性，需要按照team的分层情况以对象的形式进行输出。
 因此需要遍历数组，判断有无下一层，有则创建对象，直到没有下一层时，将name数组输入其中。
-+ 函数res(team, name)：按照team数组一层层添加属性   最后一层将name数组添加进去
++ 函数res(team, name)：按照team数组一层层添加属性   最后一层将name数组添加进去   
    1.通过flag指针 向result结果数组的内层进行遍历
    2.flag[team[i]] === undefined  说明对象数组中该属性还未定义--->创建对象
    3.跳出for循环时判断 flag[team[i]] === undefined  说明最内层的属性还未定义---->将其变为数组，并传入name；若已定义，则直接添加name
