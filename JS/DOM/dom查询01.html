@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="DOM02.css" />
+    <script>
+        /**优化代码
+         * 定义一个函数。专门为指定元素绑定单级响应事件
+         *   参数：
+         *      idStr  要绑定单击响应函数的对象的id属性值
+         *      fun    事件的回调函数，当单击元素时，该函数会被触发
+         */
+        function myClick(idStr, fun) {
+            var btn = document.getElementById(idStr);
+            btn.onclick = fun;
+        }
+
+
+        window.onload = function() {
+
+            //查找#bj结点
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function() {
+                var bj = document.getElementById("bj");
+                //通过innerHTML这个属性获取元素内部的HTML代码
+                alert(bj.innerHTML);
+            }
+
+            //查找所有li结点
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function() {
+                var li = document.getElementsByTagName("li");
+                //getElementsByTagName根据标签名查找 
+                // 会返回一个类数组对象，所以查询到的元素会封装到对象中
+                // alert(li);
+                for (var i = 0; i < li.length; i++) {
+                    alert(li[i].innerHTML);
+                }
+            }
+
+            //查找name=gender的所有节点
+            var btn03 = document.getElementById("btn03");
+            btn03.onclick = function() {
+                var inputs = document.getElementsByName("gender");
+                for (var i = 0; i < inputs.length; i++) {
+                    /**
+                     * innerHTML用于获取元素内部的HTML代码
+                     * 对于自结束标签，这个属性没有意义
+                     * 如需读取元素节点的属性，直接使用  元素.属性名
+                     *    需要注意的是，class属性不能采用这种方式    而是 元素.className
+                     */
+                    //alert(inputs[i].innerHTML);
+                    alert(inputs[i].value); // alert(inputs[i].name); alert(inputs[i].type);
+                    // alert("aaa")
+                    alert(inputs[i].className);
+                }
+            }
+
+            //查找#city下所有li节点
+            var btn04 = document.getElementById("btn04");
+            btn04.onclick = function() {
+                //获取id为city的元素
+                var city = document.getElementById("city");
+                //查找city下的所有li节点
+                var lis = city.getElementsByTagName("li");
+                for (var i = 0; i < lis.length; i++) {
+                    alert(lis[i].innerHTML);
+                }
+
+            }
+
+            //返回#city的所有子节点
+            var btn05 = document.getElementById("btn05");
+            btn05.onclick = function() {
+                var city = document.getElementById("city");
+                var child = city.childNodes;
+                /**
+                 * childNodes属性会获取包括文本节点在内的所有节点（DOM标签与标签中的空白也会被当成文本节点）
+                 * 这里5个换行也算到其中了
+                 * 注意：在IE8及以下的浏览器中，不会将空白文本当成子节点
+                 */
+                // for(var i = 0;i < child.length;i++){
+                //        alert(child[i].innerHTML);
+                //    }
+                /**
+                 * children属性可以获取当前元素的所有子元素
+                 */
+                var chi = city.children;
+                for (var i = 0; i < chi.length; i++) {
+                    alert(chi[i].innerHTML);
+                }
+
+            }
+
+            //返回#phone的第一个子节点
+            var btn06 = document.getElementById("btn06");
+            btn06.onclick = function() {
+                var phone = document.getElementById("phone");
+                // var first = phone.firstChild;
+                var first = phone.firstElementChild; //不支持IE8以下浏览器兼容性不好 不建议使用
+                alert(first.innerHTML);
+            }
+
+            //返回#bj的父节点
+            myClick("btn07", function() {
+                var bj = document.getElementById("bj");
+                var father = bj.parentNode;
+                //alert(father.innerHTML);
+                /**
+                 * innerText
+                 *    -该属性可以获取元素内部的文本内容
+                 *    -和innerHTML类似 不同的是 会自动将html标签去除
+                 */
+                alert(father.innerText);
+            });
+
+            //返回#android的前一个兄弟节点
+            myClick("btn08", function() {
+                var and = document.getElementById("android");
+                // var bro = and.previousSibling;//可能获取空白文本！
+                var bro = and.previousElementSibling; //前一个兄弟元素元素，不包括空白文本（IE8一下不支持）
+                alert(bro.innerHTML);
+            });
+
+            // 返回#username的value属性值
+            myClick("btn09", function() {
+                var user = document.getElementById("username");
+                alert(user.value);
+            });
+
+            //设置#username的value属性值
+            myClick("btn10", function() {
+                var user = document.getElementById("username");
+                user.value = "今天是个好日子";
+
+            });
+
+            //返回#bj的文本值
+            myClick("btn11", function() {
+                var bj = document.getElementById("bj");
+                alert(bj.innerHTML);
+
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>你喜欢哪个城市?</p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+            <br>
+            <br>
+            <p> 你喜欢哪款单机游戏? </p>
+            <ul id="game">
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+            <br />
+            <br />
+            <p>你手机的操作系统是? </p>
+            <ul id="phone">
+                <li>IOS</li>
+                <li id="android">Android</li>
+                <li>Windows Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input class="hello" type="radio" name="gender" value="male" /> Male
+            <input class="hello" type="radio" name="gender" value="female" /> Female
+            <br>
+            <br> name:
+            <input type="text" name="name" id="username" value="abcde" />
+        </div>
+    </div>
+    <div id="btnList">
+        <div><button id="btn01">查找#bj节点</button></div>
+        <div><button id="btn02">查找所有li节点</button></div>
+        <div><button id="btn03">查找name=gender的所有节点</button></div>
+        <div><button id="btn04">查找#city下所有li节点</button></div>
+        <div><button id="btn05">返回#city的所有子节点</button></div>
+        <div><button id="btn06">返回#phone的第一个子节点</button></div>
+        <div><button id="btn07">返回#bj的父节点</button></div>
+        <div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">返回#username的value属性值</button></div>
+        <div><button id="btn10">设置#username的value属性值</button></div>
+        <div><button id="btn11">返回#bj的文本值</button></div>
+    </div>
+</body>
+
+</html>

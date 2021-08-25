@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //获取body标签
+            // var body = document.getElementsByTagName("bady")[0];
+            /**
+             * 在docuemnt中有一个属性body，他保存的是body的引用
+             */
+            var body = document.body;
+            /**
+             * document.documentElement保存的是html根标签
+             */
+            var de = document.documentElement;
+            /**
+             * document.all代表页面中所有的元素
+             */
+            var all = document.all;
+            for (var i = 0; i < all.length; i++) {
+                //alert(all[i].innerHTML);
+            }
+            // all = document.getElementsByTagName("*"); ==all = document.all;
+            /**
+             * 根据元素的class属性值查询一组元素结点对象
+             * getElementsByClassName
+             * 但该对象不支持IE8及以下的浏览器
+             * PC端一般需要兼容IE8
+             */
+            var box = document.getElementsByClassName("box");
+            //  alert(box.length);
+
+            //获取页面中的所有div
+            var div = document.getElementsByTagName("div");
+            //获取class为box中的所有div
+            /**
+             * docunment.querySelecter()
+             *   -需要一个选择器的字符串作为参数，可以根据一个CSS选择器来查询一个元素结点对象
+             *   -querySelector支持IE8    可用querySelector代替getElementsByClassName
+             *   -使用该方法总会返回唯一的一个元素!!!  如果满足条件的有多个  也只会返回第一个!!!!!
+             */
+            var div = document.querySelector(".box div");
+            // alert(div.innerHTML);
+            var box = document.querySelector(".box");
+            alert(box.innerHTML);
+            /**
+             * querySelectorAll
+             * -与querySelecter用法类似
+             * -不同的是，他会把符合条件的元素封装到一个数组中 全部返回
+             */
+            var box = document.querySelectorAll(".box");
+            alert(box.length);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div>我是第一个box中的div</div>
+    </div>
+    <div class="box">
+        <div>我是box中的div</div>
+    </div>
+    <div class="box">
+        <div>我是box中的div</div>
+    </div>
+    <div></div>
+
+</body>
+
+</html>

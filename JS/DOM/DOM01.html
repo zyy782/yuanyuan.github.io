@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- onload事件会在整个页面加载完成后才触发 -->
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            //绑定一个点击事件
+            btn.onclick = function () { //单级响应函数
+                alert("啦啦啦啦");
+            }
+
+        }
+    </script>
+<!-- 或直接将js代码写到<body>中 -->
+</head>
+
+<body>
+    <!-- 
+        在事件的对应的属性中设置一些js代码，
+        这样当事件被触发时，这些代码将会执行
+
+         这种方法称结构和行为耦合，不方便维护，不推荐使用
+     -->
+    <!-- <button id="btn" ondblclick="alert('嗯嗯！')">按钮</button> -->
+    <button id="btn">按钮</button>
+    <!-- <script>
+        /**
+         * 可以为按钮的对应事件绑定处理函数的形式来响应事件
+         */
+        //获取button对象
+        var btn = document.getElementById("btn");
+        //绑定一个点击事件
+        btn.onclick = function () { //单级响应函数
+            alert("啦啦啦啦");
+        }
+        //修改按钮文字
+        console.log(btn.innerHTML);
+    </script> -->
+</body>
+
+</html>

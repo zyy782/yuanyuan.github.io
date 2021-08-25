@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * BOM 
+         *  -浏览器对象模型
+         *  -BOM可以使我们通过JS来操作浏览器
+         *  -在BOM中为我们提供了一组对象，用来完成对浏览器的操作
+         *  -BOM对象
+         *     Window
+         *         -代表整个浏览器的窗口，同时Window也是网页中的全局对象
+         *     Navigator
+         *         -代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器
+         *     Location
+         *         -代表当前浏览器的地址栏信息，通过Location可以获取地址信息，或者操作浏览器跳转界面
+         *     History
+         *         -代表浏览器的历史记录，可以通过该对象来操作浏览器的历史记录
+         *          由于隐私原因，该对象不能获取到具体的历史记录，只能操作浏览器向前向后翻页
+         *          而且该操作只能在当次访问时有效
+         *     Screen
+         *         -代表用户的屏幕信息，通过该对象可以获取到用户的显示器的相关信息
+         * 
+         * 这些BOM对象在浏览器中都是作为window对象的属性保存的，
+         *   可以通过window对象来使用，也可以直接使用
+         */
+       //alert(window);
+      // console.log(window.navigator);
+      /**
+       * Navigator
+       *  -代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器
+       *  - 由于历史原因，Navigator对象中的大部分属性都已经不能帮我们识别浏览器了
+       *  -一般只会使用userAgent来判断浏览器信息
+       *        userAgent是一个字符串，这个字符串包含有用来描述浏览器信息的内容，
+       *        不同浏览器会有不同的userAgent
+      */
+      //属性返回浏览器的应用程序名称：
+       console.log(navigator.appName);
+       //属性返回浏览器的应用程序代码名称：
+       console.log(navigator.appCodeName);
+       //属性返回浏览器平台（操作系统）
+       console.log(navigator.platform);
+       //返回由浏览器发送到服务器的用户代理报头
+       console.log(navigator.userAgent);
+       var ua = navigator.userAgent;
+       if(/firefox/i.test(ua)){
+           alert("你是火狐");
+       }else if(/chrome/i.test(ua)){
+           alert("你是Chorme");
+       }else if(/MSIE/i.test(ua)){
+           alert("你是IE");
+       }else if("ActiveXObject" in window){
+           alert("你是IE11");
+       }
+       /**
+        * 如果通过userAgent不能判断，还可以通过浏览器中特定的对象来判断浏览器的信息
+        * 比如：ActiveXObject
+       */
+    //   if(window.ActiveXObject){
+    //       alert("你是IE");
+    //   }else{
+    //       alert("你不是IE");
+    //   }
+  //  alert("ActiveXObject" in window);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

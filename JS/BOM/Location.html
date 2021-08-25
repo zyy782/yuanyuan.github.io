@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         *  Location
+         *   -代表当前浏览器的地址栏信息，通过Location可以获取地址信息，或者操作浏览器跳转界面
+         *   
+         * 
+         * window.location.href 返回当前页面的 href (URL)
+         * window.location.hostname 返回 web 主机的域名
+         * window.location.pathname 返回当前页面的路径或文件名
+         * window.location.protocol 返回使用的 web 协议（http: 或 https:）
+         * window.location.assign 加载新文档
+         * window.location.port 返回 web 主机的端口 （80 或 443）
+         */
+
+        window.onload = function() {
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                //获取当前地址栏信息
+                //alert(location);
+                //跳转到百度  并生成相应的历史记录
+                //location = "https://www.baidu.com/";
+                // location = assign("https://www.baidu.com/");
+                //重新加载当前页面  相当于刷新  
+                //location.reload(true);//若传递true则会强制清空缓存刷新页面
+                //跳转  但不能生成相应的历史记录
+                location.replace("test01.html");
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <h1>History</h1>
+    <input type="text">
+</body>
+
+</html>

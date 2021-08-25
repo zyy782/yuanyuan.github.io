@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 200px;
+            width: 200px;
+            background-color: hotpink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /**
+             * 当鼠标滚轮向下滚动时，box1变长
+             * 当滚轮向上滚动时，box1变短
+             * 
+             * onmousewheel鼠标滚轮滚动事件
+             * 火狐不支持该属性
+             * 火狐中需要使用DOMMouseScroll来绑定滚动事件
+             *  注意该事件需要通过addEventListener()函数来绑定
+             */
+            var box1 = document.getElementById("box1");
+            box1.onmousewheel = function(event){
+                event = event ||window.event;
+                //判断鼠标滚轮滚动的方向
+                //wheelDelta火狐不支持
+                //alert(event.wheelDelta);//其他浏览器   向上120  向下-120
+               // alert(event.detail);//火狐   向上-3 向下3
+                if(event.wheelDelta>0 || event.detail<0){
+                    //向上 box1变短
+                    box1.style.height = box1.clientHeight - 10 + "px";
+                }else{
+                    //向下 box1变长
+                    box1.style.height = box1.clientHeight + 10 + "px";
+                }
+                /**
+                 * 当滚轮滚动时，如果有浏览器有滚动条，滚动条会随之滚动
+                 * 这是浏览器默认行为 可取消
+                 * 
+                */
+              // return false;
+               /**
+                * 使用addEventListener()方法绑定响应函数，取消默认行为时不能使用return false
+                * 需要使用event来取消默认行为
+                * 但IE8不支持
+               */
+              event.preventDefault();
+            };
+            bind(box1,"DOMMouseScroll",box1.onmousewheel);
+
+        };
+        function bind(obj, evenStr, callback) {
+                if (obj.addEventListener) {
+                    //大部分浏览器兼容的方式
+                    obj.addEventListener(evenStr, callback, false);
+                } else {
+                    //IE8及以下浏览器
+                    obj.attachEvent("on" + evenStr,function(){
+                        //在匿名函数中调用回调函数
+                        callback.call(obj);
+                    });
+                }
+
+
+            }
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>
