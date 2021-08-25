@@ -52,3 +52,17 @@ function debounce(fn, delay) {
 }
 // this.debounce(this.handleScroll, 300)
 console.log(debounce(this.handleScroll, 300)) //[Function (anonymous)]
+
+let flag = true;
+
+function throttle(fn, delay) {
+    return function() {
+        if (flag) {
+            setTimeout(() => {
+                fn.call(this);
+                flag = true;
+            }, delay)
+        }
+        flag = false;
+    }
+}
