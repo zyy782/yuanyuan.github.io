@@ -40,29 +40,23 @@ console.log(add5(2)); // 7
 console.log(add10(2)); // 12
 
 
+console.log("--------------")
 
-function debounce(fn, delay) {
-    let timer = null;
-    return function() {
-        if (timer) {
-            clearTimeout(timer)
+
+
+
+var data = [];
+
+for (var i = 0; i < 3; i++) {
+    data[i] = (function(i) {
+        return function() {
+            console.log(i);
         }
-        timer = setTimeout(fn, delay);
-    }
+    })(i);
 }
-// this.debounce(this.handleScroll, 300)
-console.log(debounce(this.handleScroll, 300)) //[Function (anonymous)]
-
-let flag = true;
-
-function throttle(fn, delay) {
-    return function() {
-        if (flag) {
-            setTimeout(() => {
-                fn.call(this);
-                flag = true;
-            }, delay)
-        }
-        flag = false;
-    }
-}
+// for (let i = 0; i < data.length; i++) {
+//     console.log(data[i]())
+// }
+data[0](); //0
+data[1](); //1
+data[2](); //2
