@@ -22,13 +22,15 @@
 
 
         function testGet() {
-            // axios.get('https://www.fastmock.site/mock/85a46960d7013b5ce0eb8b3deebbcb93/navigation/companys')
-            axios({
-                    url: '/companys',
+            axios.get('https://www.fastmock.site/mock/61c052cff8e550e696c9ffe042ea0162/Navmock/api/list').then(response => {
+                    console.log(response)
                 })
-                .then(response => {
-                    console.log(response.data.Company.list)
-                })
+                // axios({
+                //         url: '/companys',
+                //     })
+                //     .then(response => {
+                //         console.log(response.data.Company.list)
+                //     })
         }
 
         // function testPost() {
