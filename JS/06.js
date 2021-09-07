@@ -1,24 +1,19 @@
-var name = "ww";
-
-(function() {
-    console.log("bye" + name);
-    if (typeof name === "undefined") {
-        var name = "Jack"
-        console.log("bye" + name) //byeJack
-    } else {
-        console.log("hello" + name)
+function clone(obj) {
+    var _obj = JSON.stringify(obj),
+        objClone = JSON.parse(_obj);
+    return objClone;
+}
+const res = {
+    field1: 1,
+    field2: undefined,
+    field3: {
+        child: 'child'
+    },
+    field4: [2, 4, 8],
+    sayhi() {
+        console.log("hi")
     }
-})()
+};
 
-
-var bo = 10;
-
-(function() {
-    console.log(bo);
-})();
-
-
-var a = [1, 2, 3];
-var b = a.slice();
-b.push(4);
-console.log(b)
+// 无法实现对对象中方法的深拷贝
+console.log(clone(res))
