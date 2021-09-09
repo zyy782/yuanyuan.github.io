@@ -13,3 +13,5 @@
 + [接入mock数据](https://github.com/zyy782/yuanyuan.github.io/blob/main/Navigation%20project/%E6%8E%A5%E5%85%A5mock%E6%95%B0%E6%8D%AE.md)
 ## 202109
 + [TCP通信三个步骤](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/TCP%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE%E7%9A%84%E7%90%86%E8%A7%A3.md)
+## Promise
++ [预备知识](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.md)
