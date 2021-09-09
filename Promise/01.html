@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr = [1, 2, 3, 4]
+        // arr.forEach(item => {
+        //     console.log(item)
+        // })
+        // console.log("----")
+        //     //1 2 3 4 ----
+
+        // setTimeout(() => {
+        //     console.log("setTimeout")
+        // }, 0)
+        // console.log("+++++++")
+        //     //+++++++    setTimeout
+
+
+        // try {
+        //     let a = null
+        //     console.log(a.name)
+        // } catch (error) {
+        //     console.log(error)
+        //     console.log(error.message)
+        //     console.log(error.stack)
+        // }
+
+        // 给定需求：奇数时刻可执行业务   偶数不可
+        function doSomething() {
+            if (Date.now() % 2 === 1) {
+                console.log("yes")
+            } else {
+                throw new Error('当前时间不能执行业务')
+            }
+        }
+        try {
+            doSomething()
+        } catch (error) {
+            console.log(error)
+        }
+    </script>
+</body>
+
+</html>
