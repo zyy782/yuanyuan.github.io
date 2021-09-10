@@ -2,43 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
 
 <body>
     <script>
-        function resolveAfter2Seconds(x) {
-            return new Promise(resolve => {
-                setTimeout(() => {
-                    resolve(x);
-                }, 2000);
-            });
+        // 现在把业务要求改一下，仍然是三个步骤，但每一个步骤都需要之前每个步骤的结果
+        function takeLongTime(n) {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve(n + 200), n)
+            })
         }
 
-        async function f1() {
-            // await 将等待 Promise 正常处理完成并返回其处理结果
-            var x = await resolveAfter2Seconds(10);
-            console.log(x); // 2秒后 打印10
+        function step1(n) {
+            console.log(`step1 with ${n}`)
+            return takeLongTime(n)
         }
-        f1();
 
-        async function f2() {
-            var y = await 20;
-            console.log(y); //立即输出 20
+        function step2(m, n) {
+            //m为上一步的结果
+            console.log(`step2 with ${m} and ${n}`)
+            return takeLongTime(m + n)
         }
-        f2();
 
-        async function f3() {
-            try {
-                var z = await Promise.reject("出错了")
-            } catch (error) {
-                console.log(error)
-            }
+        function step3(k, m, n) {
+            console.log(`step3 with ${k}, ${m} and ${n}`)
+            return takeLongTime(k + m + n)
         }
-        f3();
+
+        // function doIt() {
+        //     console.time("doIt");
+        //     const time1 = 300;
+        //     step1(time1)
+        //         .then(time2 => {
+        //             return step2(time1, time2)
+        //                 .then(time3 => [time1, time2, time3]);
+        //         })
+        //         .then(times => {
+        //             const [time1, time2, time3] = times;
+        //             return step3(time1, time2, time3);
+        //         })
+        //         .then(result => {
+        //             console.log(`result is ${result}`);
+        //             console.timeEnd("doIt");
+        //         });
+        // }
+
+
+        // doIt()
+
+        // 解决传参麻烦的问题
+        async function doIt() {
+            console.time("doIt");
+            const time1 = 300;
+            const time2 = await step1(time1);
+            const time3 = await step2(time1, time2);
+            const result = await step3(time1, time2, time3);
+            console.log(`result is ${result}`);
+            console.timeEnd("doIt");
+        }
+
+        doIt();
     </script>
 </body>
 
