@@ -16,5 +16,5 @@
 ## Promise
 + [预备知识](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.md)
 + [基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/02%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
-+ [API]()
++ [API](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/03API%E4%BD%BF%E7%94%A8.md)
 + [几个关键问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/04%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98.md)
