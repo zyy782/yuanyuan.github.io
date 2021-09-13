@@ -18,18 +18,25 @@ const promiseList = [promise1, promise2, promise3];
 
 function promiseChain(promiseList) {
     // 要求在这里写一段代码  实现输出 1 2 3 所有promise执行完毕
+    return new Promise((resolve, reject) => {
+        let i = 0
 
-    // return new Promise((resolve, reject) => {
-    for (let i = 0; i < promiseList.length; i++) {
-        new Promise((resolve, reject) => {
-            promiseList[i]().resolve()
-        });
-
-    }
-    // })
-
-
-}
-promiseChain(promiseList).then(() => {
-    console.log("所有promise执行完毕")
-})
+        function step() {
+            if (i === promiseList.length) {
+                return resolve()
+            }
+            promiseList[i]().then(
+                value => {
+                    console.log(value)
+                    i++
+                    step()
+                },
+                err => reject(err)
+            )
+        }
+        try {
+            step()
+        } catch (err) {
+            return reject(err)
+        }
+    })
