@@ -19,11 +19,14 @@ const promiseList = [promise1, promise2, promise3];
 function promiseChain(promiseList) {
     // 要求在这里写一段代码  实现输出 1 2 3 所有promise执行完毕
 
-    return new Promise((resolve, reject) => {
-        for (let i = 0; i < promiseList.length; i++) {
+    // return new Promise((resolve, reject) => {
+    for (let i = 0; i < promiseList.length; i++) {
+        new Promise((resolve, reject) => {
             promiseList[i]().resolve()
-        }
-    })
+        });
+
+    }
+    // })
 
 
 }
