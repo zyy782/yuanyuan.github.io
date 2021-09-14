@@ -34,7 +34,7 @@
 
 
 ### 2. AJAX工作原理
- 图
+![Image](https://user-images.githubusercontent.com/71962217/133187231-b181c0b2-c7a8-48bf-87e7-35a740e8cecf.png)
 
 ### 3.应用  
 #### 1 创建对象  
