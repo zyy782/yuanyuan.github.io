@@ -20,3 +20,5 @@
 + [基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/02%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
 + [API](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/03API%E4%BD%BF%E7%94%A8.md)
 + [几个关键问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/04%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98.md)
++ [宏队列与微队列](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/08js%E5%AE%8F%E9%98%9F%E5%88%97%E4%B8%8E%E5%BE%AE%E9%98%9F%E5%88%97.md)
++ [顺序执行promiselist](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/promiseList%E7%9A%84%E4%B8%80%E4%B8%AA%E9%A2%98.md )
