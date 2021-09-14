@@ -14,6 +14,7 @@
 ## 202109
 + [TCP通信三个步骤](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/TCP%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE%E7%9A%84%E7%90%86%E8%A7%A3.md)
 + [npm publish 403](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue/02publish.md)
++ [AJAX学习笔记](https://github.com/zyy782/yuanyuan.github.io/blob/main/axios/00Ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0.md)
 ## Promise
 + [预备知识](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.md)
 + [基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/02%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
