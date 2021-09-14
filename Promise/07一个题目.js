@@ -40,3 +40,4 @@ function promiseChain(promiseList) {
             return reject(err)
         }
     })
+}
