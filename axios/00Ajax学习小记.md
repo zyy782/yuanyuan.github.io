@@ -121,12 +121,14 @@ url的组成如下：
   document.domain = "127.0.0.2"
 ```
 
-同域的不同页面之间通信可通过自定义事件和监听事件的方式实现，那么不同域的页面如何实现通信呢？
-[实现跨域的三种方法](https://blog.csdn.net/huzhenv5/article/details/104884760)   
-1. **document.domain实现跨域**   
+同域的不同页面之间通信可通过自定义事件和监听事件的方式实现，那么不同域的页面如何实现通信呢？     
+接下来就步入正题，介绍实现跨域的几种方法       
+
+#### **1 document.domain实现跨域**   
      + 相同二级域名之间的跨域
      + 相同域名、不同端口之间的跨域
-2. **window.name实现跨域**  
+    https://blog.csdn.net/huzhenv5/article/details/104884760
+#### **2 window.name实现跨域**  
    举个栗子!!!  
    现有两个页面：   
    第一个：http://127.0.0.1:5500/axios/02.html   
@@ -181,8 +183,17 @@ url的组成如下：
    </body>
    ```
 
+<<<<<<< HEAD
    运行第二个页面，结果如下：   
    ```跨域获取数据 {"name":"wayne zhu","age":22,"school":"xjtu"}```   
+=======
+   结果如下：   
+
+![%I0B`0`DOP26I3}TMRVVBVN](https://user-images.githubusercontent.com/71962217/133713624-a925d485-1a80-45f6-895f-6a2c7036b29d.png)
+![5CNPQ P9IC(K)YLV{CSVMX4](https://user-images.githubusercontent.com/71962217/133713636-7c75cb8a-f441-4bd2-9b21-e17e71e526d1.png)
+![UZZ0L6JQPZUYH$NU}@HT(2K](https://user-images.githubusercontent.com/71962217/133713652-abd72a09-9d00-421c-ba07-59423ed609b4.png)
+   
+>>>>>>> 933d86a12066c82a7ff1bacdc2648b9e4f897e81
    分析：   
    widow.name不是一个一般的全局属性，一旦设置，后续就不会再改变。即使url变化，ifram中的window.name也是一个固定的值。   
    所以，首先把要获取的第一个页面中的数据设置到window.name中,所以即使页面1的url发生改变，window中的数据也不会发生改变。   
@@ -196,7 +207,7 @@ url的组成如下：
 
 
 
-3. **window.postMessage实现跨域**
+#### **3 window.postMessage实现跨域**
 
 
 
