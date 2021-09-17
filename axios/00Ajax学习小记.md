@@ -96,3 +96,104 @@ readyState属性存有XMLHttpRequest 对象的状态信息：
   GET 和 POST 是 HTTP 协议中的两种发送请求的方法，HTTP 是基于 TCP/IP 的。  
   HTTP 的底层是 TCP/IP。所以 GET 和 POST 的底层也是 TCP/IP，也就是说，**GET/POST 都是 TCP 链接**。GET 和 POST 能做的事情是一样一样的。
 
+<br>
+<br>
+
+<hr>
+
+#### 关于ajax跨域   
+在学习跨域之前，我们首先要了解一下浏览器同源策略    
+### [**同源策略**](https://baike.baidu.com/item/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/3927875)    
+    
+#### 主要作用：   
+同源策略是浏览器的行为，是为了**保护本地数据不被JavaScript代码获取回来的数据污染**，因此拦截的是客户端发出的 请求回来的数据接收，即请求发送了，服务器响应了，但是无法被浏览器接收   
+#### 什么是同源？
+MDN对同源是这样解释的：   
+如果两个 URL 的  **protocol（协议）**、 **port (en-US)** (如果有指定的话) 和 **host（主机）** 都相同的话，则这两个 URL 是同源。    
+
+url的组成如下： 
+```
+<协议>://<域名>:<端口>/<路径>     
+
+域名：
+主机名、机构名、网络名、最高层域名
+```
+#### 源的修改   
+利用document接口的domain属性，可设置/获取当前文档的原始部分    
+【获取域名】
+```
+ // http://127.0.0.1:5500/axios/02.html
+
+ var currentDomain = document.domain;
+ console.log(currentDomain)//127.0.0.1
+```
+【源的修改】
+```
+  document.domain = "127.0.0.2"
+```
+
+同域的不同页面之间通信可通过自定义事件和监听事件的方式实现，那么不同域的页面如何实现通信呢？
+[实现跨域的三种方法](https://blog.csdn.net/huzhenv5/article/details/104884760)   
+1. **document.domain实现跨域**   
+     + 相同二级域名之间的跨域
+     + 相同域名、不同端口之间的跨域
+2. **window.name实现跨域**  
+   举个栗子!!!  
+   现有两个页面：   
+   第一个：http://127.0.0.1:5500/axios/02.html   
+   第二个：http://127.0.0.1:5501/02.html   
+   两个页面端口不同，为跨域请求。现，要在第二个页面中拿到第一个页面的数据。   
+   第一个页面如下：   
+   ```
+   <body>
+    <h1>http://127.0.0.1:5500/axios/02.html 页面1</h1>
+    <script>
+        var person = {
+            name: 'wayne zhu',
+            age: 22,
+            school: 'xjtu'
+        }
+        window.name = JSON.stringify(person)
+        console.log(window.name)
+        // {"name":"wayne zhu","age":22,"school":"xjtu"}
+    </script>
+   </body>
+   ```
+   第二个页面如下：   
+   ```
+   <body>
+    <h1>http://127.0.0.1:5501/02.html 页面2</h1>
+    <p>实现把页面1的数据传递到该页面</p>
+
+    <iframe src="http://127.0.0.1:5500/axios/02.html" frameborder="0"></iframe>
+
+    <script>
+        var ifr = document.querySelector('iframe')
+        ifr.style.display = 'none'
+        var flag = 0;
+        ifr.onload = function() {
+            if (flag == 1) {
+                console.log('跨域获取数据', ifr.contentWindow.name);
+                ifr.contentWindow.close();
+            } else if (flag == 0) {
+                flag = 1;
+                ifr.contentWindow.location = 'http://127.0.0.1:5501/proxy.html';
+            }
+        }
+    </script>
+   </body>
+   ```
+
+   运行第二个页面，结果如下：   
+   ```跨域获取数据 {"name":"wayne zhu","age":22,"school":"xjtu"}```   
+   分析：   
+   widow.name不是一个一般的全局属性，一旦设置，后续就不会再改变。即使url变化，ifram中的window.name也是一个固定的值。   
+   所以，首先把要获取的第一个页面中的数据设置到window.name中   
+   然后在页面2中使用iframe标签将页面1加载过来。这样，iframe中的window.name就已经成功设置。  
+   最后，再把src设置为当前域的proxy.html就可以实现跨域，即http://127.0.0.1:5501/proxy.html    
+   设置flag的意义：   
+   每当改变location的时候，就会重新来一次onload，而我们希望获取到数据之后，就直接close()
+   
+
+
+
