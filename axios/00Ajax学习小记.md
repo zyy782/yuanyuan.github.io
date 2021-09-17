@@ -68,18 +68,6 @@ readyState属性存有XMLHttpRequest 对象的状态信息：
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ##### GET 与 POST 对比   
 从w3schools得到的标准答案如下：  
 + GET在浏览器回退时是无害的，而POST会再次提交请求。
@@ -110,6 +98,7 @@ readyState属性存有XMLHttpRequest 对象的状态信息：
 #### 什么是同源？
 MDN对同源是这样解释的：   
 如果两个 URL 的  **protocol（协议）**、 **port (en-US)** (如果有指定的话) 和 **host（主机）** 都相同的话，则这两个 URL 是同源。    
+![{_9}AB0LHJF}G L`RAR@6WL](https://user-images.githubusercontent.com/71962217/133713548-09eac504-0415-4e6c-92f0-ec6d1f0995fc.png)
 
 url的组成如下： 
 ```
@@ -185,6 +174,7 @@ url的组成如下：
    </body>
    ```
 
+<<<<<<< HEAD
    代理文件proxy.html   
    ```
    <body>
@@ -194,6 +184,14 @@ url的组成如下：
 
    运行第二个页面，结果如下：   
    ```跨域获取数据 {"name":"wayne zhu","age":22,"school":"xjtu"}```   
+=======
+   结果如下：   
+
+![%I0B`0`DOP26I3}TMRVVBVN](https://user-images.githubusercontent.com/71962217/133713624-a925d485-1a80-45f6-895f-6a2c7036b29d.png)
+![5CNPQ P9IC(K)YLV{CSVMX4](https://user-images.githubusercontent.com/71962217/133713636-7c75cb8a-f441-4bd2-9b21-e17e71e526d1.png)
+![UZZ0L6JQPZUYH$NU}@HT(2K](https://user-images.githubusercontent.com/71962217/133713652-abd72a09-9d00-421c-ba07-59423ed609b4.png)
+   
+>>>>>>> 9e9b03e8cf4b7991fdf7236f6e267ed847dedf84
    分析：   
    widow.name不是一个一般的全局属性，一旦设置，后续就不会再改变。即使url变化，ifram中的window.name也是一个固定的值。   
    所以，首先把要获取的第一个页面中的数据设置到window.name中,所以即使页面1的url发生改变，window中的数据也不会发生改变。   
