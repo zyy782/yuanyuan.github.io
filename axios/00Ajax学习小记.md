@@ -165,22 +165,30 @@ url的组成如下：
     <h1>http://127.0.0.1:5501/02.html 页面2</h1>
     <p>实现把页面1的数据传递到该页面</p>
 
-    <iframe src="http://127.0.0.1:5500/axios/02.html" frameborder="0"></iframe>
+    <iframe src="http://127.0.0.1:5500/axios/02.html" frameborder="1"></iframe>
 
     <script>
-        var ifr = document.querySelector('iframe')
-        ifr.style.display = 'none'
+        var iframe = document.querySelector('iframe')
+        //iframe.style.display = 'none'
         var flag = 0;
-        ifr.onload = function() {
+        iframe.onload = function() {
             if (flag == 1) {
-                console.log('跨域获取数据', ifr.contentWindow.name);
-                ifr.contentWindow.close();
+                console.log('跨域获取数据', iframe.contentWindow.name);//获取window.name
+                iframe.contentWindow.close();//销毁数据
             } else if (flag == 0) {
                 flag = 1;
-                ifr.contentWindow.location = 'http://127.0.0.1:5501/proxy.html';
+                //设置代理文件
+                iframe.contentWindow.location = 'http://127.0.0.1:5501/proxy.html';
             }
         }
     </script>
+   </body>
+   ```
+
+   代理文件proxy.html   
+   ```
+   <body>
+    <p>这是proxy页面</p>
    </body>
    ```
 
@@ -188,12 +196,18 @@ url的组成如下：
    ```跨域获取数据 {"name":"wayne zhu","age":22,"school":"xjtu"}```   
    分析：   
    widow.name不是一个一般的全局属性，一旦设置，后续就不会再改变。即使url变化，ifram中的window.name也是一个固定的值。   
-   所以，首先把要获取的第一个页面中的数据设置到window.name中   
-   然后在页面2中使用iframe标签将页面1加载过来。这样，iframe中的window.name就已经成功设置。  
-   最后，再把src设置为当前域的proxy.html就可以实现跨域，即http://127.0.0.1:5501/proxy.html    
+   所以，首先把要获取的第一个页面中的数据设置到window.name中,所以即使页面1的url发生改变，window中的数据也不会发生改变。   
+   然后在页面2中使用iframe标签将页面1加载过来。这样，iframe中的window.name就已经成功设置。我们就可以在页面2中使用contentWindow.name来获取到页面1的 window.name属性     
+   但是现在两个文件依旧是非同源，这个时候我们利用一个代理文件proxy.html，将页面1的url改为与页面2同源的代理文件的url。即```iframe.contentWindow.location = 'http://127.0.0.1:5501/proxy.html';```  这样就实现了在页面2中获取到页面1的数据   
+     
    设置flag的意义：   
-   每当改变location的时候，就会重新来一次onload，而我们希望获取到数据之后，就直接close()
-   
+   每当改变location的时候，就会重新来一次onload，而我们希望获取到数据之后，就直接close()    
+   [ contentWindow ](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLIFrameElement/contentWindow)   
+   contentWindow.location    :修改iframe所指向的页面
+
+
+
+3. **window.postMessage实现跨域**
 
 
 
