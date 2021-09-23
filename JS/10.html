@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let foo = null;
+
+        console.log("zzzz")
+
+        function outer() {
+            let bar = foo;
+
+            function unused() { // 未使用到的函数
+                console.log(`bar is ${bar}`);
+            }
+
+            foo = { // 给foo变量重新赋值
+                bigData: new Array(100000).join("this_is_a_big_data"), // 如果这个对象携带的数据非常大，将会造成非常大的内存泄漏
+                inner: function() {
+                    console.log(`inner method run`);
+                }
+            }
+        }
+        for (let i = 0; i < 1000; i++) {
+            outer();
+        }
+    </script>
+</body>
+
+</html>
