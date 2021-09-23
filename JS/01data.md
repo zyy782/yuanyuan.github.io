@@ -109,3 +109,32 @@ console.log(result)
    2. flag[team[i]] === undefined  说明对象数组中该属性还未定义--->创建对象
    3. 跳出for循环时判断 flag[team[i]] === undefined  说明最内层的属性还未定义---->将其变为数组，并传入name；若已定义，则直接添加name
 +  最后循处理每条数据   输出结果
+
+
+【类似的一个题目】
+题目描述：
+根据包名，在指定空间中创建对象    
+输入：```namespace({a: {test: 1, b: 2}}, 'a.b.c.d')```   
+输出：```{a: {test: 1, b: {c: {d: {}}}}}```
+```
+ function namespace(oNamespace, sPackage) {
+            var arr = sPackage.split('.');
+            var res = oNamespace; // 保留对原始对象的引用
+
+            for (var i = 0, len = arr.length; i < len; i++) {
+                // 如果指定的属性在指定的对象或其原型链中，则in 运算符返回true
+                if (arr[i] in oNamespace) {
+                    if (typeof oNamespace[arr[i]] !== "object") { // 该属性不是对象 如：b:2
+                        oNamespace[arr[i]] = {}; // 将此属性设为空对象			
+                    }
+                } else {
+                    oNamespace[arr[i]] = {};
+                }
+
+                oNamespace = oNamespace[arr[i]]; // 将指针指向下一个空间名属性。
+            }
+
+            return res;
+
+        }
+```
