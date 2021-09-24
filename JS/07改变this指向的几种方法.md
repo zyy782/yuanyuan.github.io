@@ -1,6 +1,7 @@
 ### this指向的是一个对象→上下文对象
  根据函数调用的不同 this会指向不同的对象    
- 1. 以函数的形式调用时  this永远是windows
+ 1. 以函数的形式调用时  this永远是windows     
+    在严格版中的默认的this不再是window，而是undefined
  2. 以方法的形式调用时，this就是指调用方法的那个对象
  3. 箭头函数没有自己的this
 
