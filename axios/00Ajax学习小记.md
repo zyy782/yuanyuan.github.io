@@ -125,8 +125,9 @@ url的组成如下：
 接下来就步入正题，介绍实现跨域的几种方法       
 
 #### **1 document.domain实现跨域**   
-     + 相同二级域名之间的跨域
-     + 相同域名、不同端口之间的跨域
++ 相同二级域名之间的跨域
++ 相同域名、不同端口之间的跨域
+   
     https://blog.csdn.net/huzhenv5/article/details/104884760
 #### **2 window.name实现跨域**  
    举个栗子!!!  
@@ -244,4 +245,7 @@ JSONP 利用的原理就是这些标签来解决跨域的问题。
 相关文章    
 http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html    
 https://segmentfault.com/a/1190000012469713
+<<<<<<< HEAD
 https://juejin.cn/post/6844904029420519437
+=======
+>>>>>>> b966762b02df0d94ca64acd2df017cca38224d85
