@@ -203,13 +203,45 @@ url的组成如下：
 
 
 #### **3 [window.postMessage实现跨域](https://blog.csdn.net/huzhenv5/article/details/104884760)**
-
 [语法](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)：```otherWindow.postMessage(message, targetOrigin, [transfer]);```
 
+#### 4 CORS解决跨域
+后端通过设置 CORS 来解决跨域。    
+跨域资源共享(CORS) 是一种机制，它使用额外的 HTTP Header来告诉浏览器 让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。
+```
+// 在node端设置一下请求头，允许接收所有源地址的请求
+res.header('Access-Control-Allow-Origin', '*');
+res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+res.header('Access-Control-Allow-Headers', '*');
 
+```
+#### 5 JSONP 
 
+同源限制是跨域的本质，也就是没有同源限制这么个东西，那么也就不存在跨域了。事实上，存在一些标签没有同源限制 ```<script>/<link>/<img>```(有src属性的都没有同源限制)。    
+JSONP 利用的原理就是这些标签来解决跨域的问题。
+1. 浏览器遇到```<script>```就会执行里面的内容
+```
+// 按钮获取数据
+<button onclick="loadJsonpData()">JSONP获取数据</button>
+
+<script>
+  function loadJsonpData() {
+    const script = document.createElement('script');
+    script.src='http://localhost:3000/jsonp/list';
+    document.body.appendChild(script);
+  }
+</script>
+
+作者：前端周同学
+链接：https://juejin.cn/post/6844904029420519437
+
+```
+2. 前后端约定一个执行函数的名称callback
+3. 前端定义这个callback执行函数，来获取到后台的数据
+4. 后台返回一个携带数据的callback可执行函数
 
 
 相关文章    
 http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html    
 https://segmentfault.com/a/1190000012469713
+https://juejin.cn/post/6844904029420519437
