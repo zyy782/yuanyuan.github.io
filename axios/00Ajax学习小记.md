@@ -245,7 +245,3 @@ JSONP 利用的原理就是这些标签来解决跨域的问题。
 相关文章    
 http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html    
 https://segmentfault.com/a/1190000012469713
-<<<<<<< HEAD
-https://juejin.cn/post/6844904029420519437
-=======
->>>>>>> b966762b02df0d94ca64acd2df017cca38224d85
