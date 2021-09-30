@@ -23,6 +23,7 @@
 + [关于http协议](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/02.md)
 + [前端性能优化与常见安全性问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/03.md)
 + [跨域](https://github.com/zyy782/yuanyuan.github.io/blob/main/axios/00Ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0.md)
++ [v-for中的 key](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue/01key.md)
 ## Promise
 + [预备知识](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/01%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.md)
 + [基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/02%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md)
