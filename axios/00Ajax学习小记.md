@@ -249,7 +249,8 @@ https://segmentfault.com/a/1190000012469713
 
 ### 2022.3.1 [b站项目，实现跨域部分](https://www.bilibili.com/video/BV1HA411p7aA?p=8&spm_id_from=pageDriver)      
 >前景提要 ： 前端端口号为8080，后端为8081，现实现跨域以拿到后端的接口数据。
->方法：proxy代理
+>方法：proxy代理     
 >![image](https://user-images.githubusercontent.com/71962217/156124450-b8ad173d-0b72-4f72-be26-320b840c1559.png)
 
+[proxy参考](https://www.jianshu.com/p/2a8ec76e0090)
 
