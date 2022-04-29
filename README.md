@@ -34,5 +34,5 @@
 ## 202203
 + [render](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue/render.md)
 ## 202204
-+ [第一个实习任务01]()
-+ [第一个实习任务02]()
++ [第一个实习任务01](https://github.com/zyy782/yuanyuan.github.io/blob/main/firstIntership/01.md)
++ [第一个实习任务02](https://github.com/zyy782/yuanyuan.github.io/blob/main/firstIntership/02.md)
