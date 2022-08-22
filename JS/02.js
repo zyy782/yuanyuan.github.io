@@ -60,3 +60,26 @@ for (var i = 0; i < 3; i++) {
 data[0](); //0
 data[1](); //1
 data[2](); //2
+
+
+(function () {
+    console.log('自执行函数');
+})();
+
+console.log('----借助闭包保存状态-----');
+for (var i = 0; i < 3; i++) {
+    setTimeout(function () {
+        console.log(i);  // 3 3 3
+        //在执行到这一行时，发现匿名函数里没有i，然后向往外部作用域找，然后找到的其实是for循环执行完了的i，也就是2++，3
+        // 参考事件循环机制
+    }, 1000);
+}
+
+for (var i = 0; i < 3; i++) {
+    (function (x) {
+        setTimeout(function () {
+            console.log(x);  // 0 1 2
+        }, 1000);
+    })(i)
+    //i传给了x，并且锁在内存中，所以不会变
+}
