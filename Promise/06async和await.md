@@ -36,7 +36,7 @@ var x = await resolveAfter2Seconds(10);若去掉await
 ```
 
 如果想下面的代码一样，等待到的是一个值，await的远算结果就是这个值   
-但是如果像f1()里面一样，**等待到的是Promise对象，await就会阻塞后面的代码，**直到等到Promise执行完成，然后得到resolve的值并把它作为await边大师的运算结果。    
+但是如果像f1()里面一样，**等待到的是Promise对象，await就会阻塞后面的代码，直到等到Promise执行完成**，然后得到resolve的值并把它作为await的运算结果。    
 这也是await必须在async函数中用的原因，因为async函数调用不会造成阻塞，它内部的所有阻塞都被封装在一个Promise对象中异步执行。
 
 

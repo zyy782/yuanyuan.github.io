@@ -3,13 +3,16 @@
  1. 以函数的形式调用时  this永远是windows     
     在严格版中的默认的this不再是window，而是undefined
  2. 以方法的形式调用时，this就是指调用方法的那个对象
- 3. 箭头函数没有自己的this
+ 3. 箭头函数没有自己的this:
+    箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined
+
+> 看到一篇博客将this指向总结为 “**this永远指向最后调用它的那个对象**” 很容易就能搞懂this的指向问题 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [传送门](https://juejin.cn/post/6844903496253177863)
 
 ## 改变this指向的几种方法
 ### call()
 -第一个参数：上下文对象     
 -第二个参数：一个参数列表     
-```fn.apply(obj,name,age)   ```    
+```fn.call(obj,name,age)   ```    
 在继承中的应用：    
 ```
     function Parent1(name) {
@@ -52,25 +55,25 @@ function.bind(thisArg, arg1, arg2, ...)
 1. 有的函数**不需要立即调用** 但**又想改变函数内部的this指向**时    
    比如说有一个按钮 我们点击之后禁用掉这个按钮 3秒之后重新开启这个按钮
    ```
-   var btn = document.querySelector("button")
-        btn.onclick = function() {
-            this.disabled = true; //this指向btn
-            setTimeout(function() {
-                this.disabled = false //this指向window
-            }.bind(this), 3000)
-        }
+    var btn = document.querySelector("button")
+    btn.onclick = function() {
+        this.disabled = true; //this指向btn
+        setTimeout(function() {
+            this.disabled = false //this指向window
+        }.bind(this), 3000)
+    }
    ```
    等同于：   
 
    ```
    var btn = document.querySelector("button")
-        btn.onclick = function() {
-            this.disabled = true; //this指向btn
-            var that  = this
-            setTimeout(function() {
-                that.disabled = false    
-            }, 3000)
-        }
+   btn.onclick = function() {
+        this.disabled = true; //this指向btn
+        var that  = this
+        setTimeout(function() {
+            that.disabled = false    
+        }, 3000)
+    }
    ```  
 
 
