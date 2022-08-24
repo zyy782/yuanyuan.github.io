@@ -36,3 +36,5 @@
 ## 202204
 + [第一个实习任务01](https://github.com/zyy782/yuanyuan.github.io/blob/main/firstIntership/01.md)
 + [第一个实习任务02](https://github.com/zyy782/yuanyuan.github.io/blob/main/firstIntership/02.md)
+## 20220809
++ [AMD规范](https://github.com/zyy782/yuanyuan.github.io/blob/main/something/02.md)
