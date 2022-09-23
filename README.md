@@ -43,3 +43,4 @@
 + [解决强制修改组件样式失败问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/01.md)
 + [异形swiper---前面左对齐，最后右对齐](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/02.md)
 + [父子传值--解决子组件修改父组件值失败的问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/03.md)
++ [总结1](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/04.md)
