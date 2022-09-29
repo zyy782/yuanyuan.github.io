@@ -11,7 +11,7 @@
 + [事件委托](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/09%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.md)
 + [JS事件机制](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/08%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6.md)
 + [内存泄漏](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/10%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F.md)
-+[ES6新增运算符](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/13.md)
++ [ES6新增运算符](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/13.md)
 ## 202108
 + [导航页](https://github.com/zyy782/yuanyuan.github.io/tree/main/Navigation%20project)
 + [实现换肤功能](https://github.com/zyy782/yuanyuan.github.io/blob/main/Navigation%20project/%E5%AE%9E%E7%8E%B0%E6%8D%A2%E8%82%A4%E5%8A%9F%E8%83%BD.md)
