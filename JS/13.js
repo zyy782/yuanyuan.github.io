@@ -63,5 +63,68 @@ console.log(objname)
 //     return map[currentTopLevel] ?? '黑钻会员'
 //   }
 //   console.log(newcurrentLevel(6)) // 黑钻会员
+console.log(0.1+0.2 === 0.3) // false
+let a = (0.1+0.2).toFixed(1)
+let b = 0.3
+console.log(a==b) //true
+console.log(a===b) //false
+console.log(typeof a) //string
+console.log(typeof b) //number
+let c = parseFloat(a)
+console.log(c === b) //true
+/**
+ * 简单来说：
+ * == 代表相等， === 代表严格相等
+ * 当进行双等号比较时候： 先检查两个操作数数据类型，
+ * 如果相同， 则进行 === 比较， 如果不同， 则愿意为你进行一次类型转换，
+ * 转换成相同类型后再进行比较
+ * 
+ * 而===比较时， 如果类型不同，直接就是false.
+ */
 
-  
+
+var x1 = [1, 2, 3] // x1 是 [1, 2, 3] 的一个引用， 指向[1, 2, 3] 而不是持有[1, 2, 3]
+var y1 = x1 // y1 是 [1, 2, 3] 的一个引用， 指向[1, 2, 3] 而不是持有[1, 2, 3]
+y1.push(4)
+console.log(x1) // [ 1, 2, 3, 4 ]
+console.log(y1) // [ 1, 2, 3, 4 ]
+y1 = [5, 6, 7] // y1 变为 [5, 6, 7] 的一个引用 ，指向 [5, 6, 7]  x1的指向不受影响
+// 一个引用无法改变另一个引用的指向
+console.log(y1) // [5, 6, 7]
+console.log(x1)  // [ 1, 2, 3, 4 ]
+
+console.log('-------')
+function foo(x) {
+    x.push(4)
+    console.log(x) // [ 1, 2, 3, 4 ]
+    x=[4,5,6] // 不影响 aa 的指向
+    x.push(7)
+    console.log(x)  // [ 4, 5, 6, 7 ]
+}
+var aa = [1,2,3]
+foo(aa)
+/**
+ * 向函数foo传递 aa 的时候，实际是将 aa 的副本赋值给 x 
+ * aa 依旧指向 [1,2,3]
+ */
+console.log(aa) // [ 1, 2, 3, 4 ]
+
+function foo2(wrapper) {
+    wrapper.a = 42
+}
+var obj2 = {
+    a: 2
+}
+foo2(obj2)
+console.log(obj2.a) //42
+
+
+let testA = new Boolean( false )
+console.log(testA)
+// testA始终为 真
+if (!testA) {
+    console.log('+++++')
+} else {
+    console.log('----')
+}
+console.log(testA.valueOf()) // false
