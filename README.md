@@ -47,3 +47,5 @@
 + [组件复用](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/06.md)
 + [一个computed的常用场景](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/05.md)
 + [总结1](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/04.md)
+## 20221011
++ ["toJSON" is not defined 解决方法](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/07.md)
