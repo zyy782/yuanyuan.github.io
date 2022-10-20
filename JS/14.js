@@ -138,14 +138,17 @@ switch (3) {
 }
 console.log(text) // 期待周末
 
-var x = "42"
+var x = "10"
 switch(true) {
   case x == 10:
     console.log('--1---');
-    break;
+    // break;
   case x == 42:
     console.log('---2--') //---2--
-    break;
+    // break;
   default:
     console.log('---3---')
 }
+// --1---
+// ---2--
+// ---3---
