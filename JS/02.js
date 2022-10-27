@@ -84,37 +84,49 @@
 //     //i传给了x，并且锁在内存中，所以不会变
 // }
 
-function makeAdder(x) {
-    function add(y) {
-        return x + y;
-    }
-    return add;
+// function makeAdder(x) {
+//     function add(y) {
+//         return x + y;
+//     }
+//     return add;
+// }
+// // makeAdder( 1 ) 返回一个add() 的一个引用，它记忆了 x = 1 ，将这个引用赋值给 plusOne
+// var plusOne = makeAdder( 1 )
+// // 调用plusOne，并传入参数 3 ，此时 3 传给了 记忆了 x = 1 的 add() 的这个引用
+// console.log(plusOne( 3 )) // 4
+
+// var plusTen = makeAdder( 10 )
+
+// console.log(plusOne( 6 )) // 7
+// console.log(plusTen( 20 )) //30
+
+// function User() {
+//     var userName;
+//     var passWord;
+//     function doLogin(user,pw) {
+//         userName = user;
+//         passWord = pw;
+//         // 形成一个在userName和passWord上的闭包
+//         // console.log(user,pw)
+//         console.log(userName,passWord)
+//     }
+//     // login是对内层函数doLogin的引用
+//     var publicAPI = {
+//         login: doLogin
+//     }
+//     return publicAPI;
+// }
+// var test = User();
+// test.login('test','111111')
+
+var data = [];
+
+for (var i = 0; i < 3; i++) {
+    data[i] = function() {
+        console.log(i);
+    };
 }
-// makeAdder( 1 ) 返回一个add() 的一个引用，它记忆了 x = 1 ，将这个引用赋值给 plusOne
-var plusOne = makeAdder( 1 )
-// 调用plusOne，并传入参数 3 ，此时 3 传给了 记忆了 x = 1 的 add() 的这个引用
-console.log(plusOne( 3 )) // 4
 
-var plusTen = makeAdder( 10 )
-
-console.log(plusOne( 6 )) // 7
-console.log(plusTen( 20 )) //30
-
-function User() {
-    var userName;
-    var passWord;
-    function doLogin(user,pw) {
-        userName = user;
-        passWord = pw;
-        // 形成一个在userName和passWord上的闭包
-        // console.log(user,pw)
-        console.log(userName,passWord)
-    }
-    // login是对内层函数doLogin的引用
-    var publicAPI = {
-        login: doLogin
-    }
-    return publicAPI;
-}
-var test = User();
-test.login('test','111111')
+data[0](); //3
+data[1](); //3
+data[2](); //3
