@@ -50,3 +50,5 @@
 + [总结1](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/04.md)
 ## 20221011
 + ["toJSON" is not defined 解决方法](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/07.md)
++ [前端性能优化](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/08.md)
++ [图片懒加载](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/08.md)
