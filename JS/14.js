@@ -114,41 +114,54 @@
 // // throw 20
 
 
-var a = "hello world";
-var b = 10;
-switch(true) {
-  case !!(a||b == 10):
-    console.log('1111') //1111
-    break
-  default:
-    console.log('2222')
-}
-console.log(!!(a||b == 10),(a||b),a|| (b == 10))
+// var a = "hello world";
+// var b = 10;
+// switch(true) {
+//   case !!(a||b == 10):
+//     console.log('1111') //1111
+//     break
+//   default:
+//     console.log('2222')
+// }
+// console.log(!!(a||b == 10),(a||b),a|| (b == 10))
 
-var text;
-switch (3) {
-  default:
-    text = "期待周末";
-    break;
-  case 6:
-    text = "今天是周六";
-    break;
-  case 0:
-    text = "今天是周日";
-}
-console.log(text) // 期待周末
+// var text;
+// switch (3) {
+//   default:
+//     text = "期待周末";
+//     break;
+//   case 6:
+//     text = "今天是周六";
+//     break;
+//   case 0:
+//     text = "今天是周日";
+// }
+// console.log(text) // 期待周末
 
-var x = "10"
-switch(true) {
-  case x == 10:
-    console.log('--1---');
-    // break;
-  case x == 42:
-    console.log('---2--') //---2--
-    // break;
-  default:
-    console.log('---3---')
-}
+// var x = "10"
+// switch(true) {
+//   case x == 10:
+//     console.log('--1---');
+//     // break;
+//   case x == 42:
+//     console.log('---2--') //---2--
+//     // break;
+//   default:
+//     console.log('---3---')
+// }
 // --1---
 // ---2--
 // ---3---
+// let someDate = new Date(Date.parse("May 22, 2020"))
+// console.log(someDate)
+
+// let ss = new Date(2000,0,0)
+// console.log(ss)
+// let a = new Date()
+// console.log(a.getMonth())
+
+let pattern = /\<\=/g
+let str = "1<=2"
+console.log(pattern.test(str)) //true
+
+
