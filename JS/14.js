@@ -113,7 +113,6 @@
 // // finally
 // // throw 20
 
-
 // var a = "hello world";
 // var b = 10;
 // switch(true) {
@@ -160,8 +159,24 @@
 // let a = new Date()
 // console.log(a.getMonth())
 
-let pattern = /\<\=/g
-let str = "1<=2"
-console.log(pattern.test(str)) //true
+let pattern = /\<\=/g;
+let str = "1<=2";
+console.log(pattern.test(str)); //true
 
+let aa = "foobarbaz";
+console.log(aa.charAt(6), aa.endsWith("bar", 6));
 
+let message = "abc";
+let ite = message[Symbol.iterator]();
+console.log(ite.next()); //{ value: 'a', done: false }
+console.log(ite.next()); //{ value: 'b', done: false }
+console.log(ite.next()); //{ value: 'c', done: false }
+console.log(ite.next()); //{ value: undefined, done: true }
+
+console.log([...message]); // [ 'a', 'b', 'c' ]
+
+let text = "cat, bat, sat, fat";
+let pattern2 = /.at/;
+console.log(text.match(pattern2))
+// [ 'cat', index: 0, input: 'cat, bat, sat, fat', groups: undefined ]
+console.log(text.replace(pattern2, '--'))
