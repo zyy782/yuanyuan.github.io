@@ -180,3 +180,4 @@ let pattern2 = /.at/;
 console.log(text.match(pattern2))
 // [ 'cat', index: 0, input: 'cat, bat, sat, fat', groups: undefined ]
 console.log(text.replace(pattern2, '--'))
+// --, bat, sat, fat
