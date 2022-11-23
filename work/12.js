@@ -71,19 +71,27 @@
 // // 1 -- 22
 // // 2 -- 33
 
-let s1 = Symbol("foo"),
-  s2 = Symbol("bar");
-let o = {
-  [s1]: "foo val",
-  [s2]: "bar val",
-  baz: "baz val",
-  qux: "qux val",
-};
-console.log(Object.getOwnPropertySymbols(o));
-// [Symbol(foo), Symbol(bar)]
-console.log(Object.getOwnPropertyNames(o));
-// ["baz","qux"]
-console.log(Object.getOwnPropertyDescriptors(o));
-// {baz: {...}, qux: {...}, Symbol(foo):{...}, Symbol(bar): {...}}
-console.log(Reflect.ownKeys(o));
-// ["baz","qux", Symbol(foo), Symbol(bar)
+// let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+// let res1 = numbers.every((item) => item > 2)
+// console.log(res1) // false
+// let res2 = numbers.some(item => item > 2)
+// console.log(res2) // true
+// let res3 = numbers.filter(item => item > 2)
+// console.log(res3) // [ 3, 4, 5, 4, 3 ] 
+// let res4 = numbers.map(item => item * 2)
+// console.log(res4) //[ 2, 4, 6, 8, 10, 8, 6, 4, 2]
+// numbers.forEach(item => {
+//   console.log(item*2) // 2 4 6 8 10 8 6 4 2
+// })
+
+let nmu = [1,2,3,4,5]
+let sum = nmu.reduce((prev,cur,index,arr)=>{
+  console.log(prev,cur,index,arr);
+  return prev + cur
+},3)
+console.log(sum) // 15
+// 1 2 1 [ 1, 2, 3, 4, 5 ]
+// 3 3 2 [ 1, 2, 3, 4, 5 ]
+// 6 4 3 [ 1, 2, 3, 4, 5 ]
+// 10 5 4 [ 1, 2, 3, 4, 5 ]
+// 15
