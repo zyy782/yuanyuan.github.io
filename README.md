@@ -57,3 +57,4 @@
 + [RegExp](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/11.md)
 + [Array相关](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/12.md)
 + [Symbol](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/13.md)
++ [mock与Apipost的基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/15.md)
