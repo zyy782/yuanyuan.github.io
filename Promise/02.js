@@ -25,3 +25,14 @@ p.then(value => { //onResolved
 // 执行器excutor
 // 异步任务之后的代码
 // 失败的回调 失败的数据:time=1631166686875
+// let show = true
+// function  func1(val1,val2) {
+//     return new Promise((resolve,reject) => {
+//         if(val1 === val2){
+//             resolve(1)
+//         }else {
+//             reject()
+//         }
+//     })
+// }
+// console.log(func1(1,1))
