@@ -13,12 +13,12 @@
 + [内存泄漏](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/10%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F.md)
 + [ES6新增运算符](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/13.md)
 + [你不知道的JavaScript（中）学习记录](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/14.md#%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84javascript%E4%B8%AD%E5%AD%A6%E4%B9%A0%E8%8D%89%E7%BA%B8)
-## 202108
+## 2021 08
 + [导航页](https://github.com/zyy782/yuanyuan.github.io/tree/main/Navigation%20project)
 + [实现换肤功能](https://github.com/zyy782/yuanyuan.github.io/blob/main/Navigation%20project/%E5%AE%9E%E7%8E%B0%E6%8D%A2%E8%82%A4%E5%8A%9F%E8%83%BD.md)
 + [一键回到顶部（节流与防抖）](https://github.com/zyy782/yuanyuan.github.io/blob/main/Navigation%20project/%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%EF%BC%88%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96%EF%BC%89.md)
 + [接入mock数据](https://github.com/zyy782/yuanyuan.github.io/blob/main/Navigation%20project/%E6%8E%A5%E5%85%A5mock%E6%95%B0%E6%8D%AE.md)
-## 202109
+## 2021 09
 + [TCP通信三个步骤](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/TCP%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE%E7%9A%84%E7%90%86%E8%A7%A3.md)
 + [npm publish 403](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue/02publish.md)
 + [AJAX学习笔记](https://github.com/zyy782/yuanyuan.github.io/blob/main/axios/00Ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0.md)
@@ -33,12 +33,12 @@
 + [几个关键问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/04%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98.md)
 + [宏队列与微队列](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/08js%E5%AE%8F%E9%98%9F%E5%88%97%E4%B8%8E%E5%BE%AE%E9%98%9F%E5%88%97.md)
 + [顺序执行promiselist](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/promiseList%E7%9A%84%E4%B8%80%E4%B8%AA%E9%A2%98.md )
-## 202203
+## 2022 03
 + [render](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue/render.md)
-## 202204
+## 2022 04
 + [第一个实习任务01](https://github.com/zyy782/yuanyuan.github.io/blob/main/firstIntership/01.md)
 + [第一个实习任务02](https://github.com/zyy782/yuanyuan.github.io/blob/main/firstIntership/02.md)
-## 20220809
+## 2022 08/09
 + [AMD规范](https://github.com/zyy782/yuanyuan.github.io/blob/main/something/02.md)
 + [解决切换node版本导致yarn不可用问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/something/03.md)
 + [vue内置组件 Transition](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue\03transition.md)
@@ -48,7 +48,7 @@
 + [组件复用](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/06.md)
 + [一个computed的常用场景](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/05.md)
 + [总结1](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/04.md)
-## 20221011
+## 2022 10/11
 + ["toJSON" is not defined 解决方法](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/07.md)
 + [前端性能优化](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/08.md)
 + [图片懒加载](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/08.md)
@@ -58,3 +58,4 @@
 + [Array相关](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/12.md)
 + [Symbol](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/13.md)
 + [mock与Apipost的基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/15.md)
+## 2022 12
