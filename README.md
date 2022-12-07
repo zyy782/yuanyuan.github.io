@@ -59,3 +59,4 @@
 + [Symbol](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/13.md)
 + [mock与Apipost的基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/15.md)
 ## 2022 12
++ [component 动态加载组件](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/16component.md)
