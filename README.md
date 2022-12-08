@@ -55,7 +55,7 @@
 + [过滤器filters](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/09.md)
 + [路由跳转](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/10.md)
 + [RegExp](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/11.md)
-+ [Array相关](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/12.md)
++ [Array与提高开发效率的一些小技巧](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/12.md)
 + [Symbol](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/13.md)
 + [mock与Apipost的基本使用](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/15.md)
 ## 2022 12
