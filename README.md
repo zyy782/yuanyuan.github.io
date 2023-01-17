@@ -61,3 +61,5 @@
 ## 2022 12
 + [component 动态加载组件](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/16component.md)
 + [透传与组件传值](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/17attrs.md)
+## 2023 01
++ [npm发布组件](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/npm.md)
