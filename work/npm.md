@@ -300,7 +300,7 @@ babel.config.js
 ```
 ### 8.打包并发布
 - 以上全部完成后，执行 ```npm run lib``` 将封装的组件最终打为lib包，打完的目录如下：  
-<img src="../pictures/npm2.png"/>  
+<img src="https://i.postimg.cc/L67jQpHZ/npm2.png"/>  
 
 - ```nrm use npm``` 将源切换至npm
 - ```npm login``` 登录npm账号
