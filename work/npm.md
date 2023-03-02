@@ -7,8 +7,10 @@ vue create test-hcharts
 #### 2.修改项目目录
 - 原本的 src 文件夹修改为 examples，用于存放使用组件的案例；  
 - 新增 packages 文件夹，用于存放封装的自定义组件
-- 新增vue.config.js文件，用于修改相关的配置
-  <img src="../pictures/npm.png"/>
+- 新增vue.config.js文件，用于修改相关的配置   
+  <!-- <img src="../pictures/npm.png"/> -->  
+  
+  <img src="https://i.postimg.cc/fTkxvLhN/npm.png"/>
 #### 3.书写组件
 这里以发布封装echarts组件为例， packages 文件夹下，新建 hs-charts > src 文件夹，src 用于存放所有的vue组件。  
 这里需要注意的是，一定要将组件的name属性export出去，因为我们是通过name属性对组件进行注册的。
@@ -300,13 +302,16 @@ babel.config.js
 ```
 ### 8.打包并发布
 - 以上全部完成后，执行 ```npm run lib``` 将封装的组件最终打为lib包，打完的目录如下：  
-<img src="https://i.postimg.cc/L67jQpHZ/npm2.png"/>  
+<!-- <img src="../pictures/npm2.png"/>   -->
+<img src="https://i.postimg.cc/L67jQpHZ/npm2.png"/> 
 
 - ```nrm use npm``` 将源切换至npm
 - ```npm login``` 登录npm账号
 - ```npm publish``` 发布到npm
-<img src="../pictures/npm3.png"/>
-<img src="../pictures/npm4.png"/>
+<!-- <img src="../pictures/npm3.png"/>
+<img src="../pictures/npm4.png"/> -->
+<img src="https://i.postimg.cc/R01f0Jwc/npm3.png"/>
+<img src="https://i.postimg.cc/wjmLSGv4/npm4.png"/>
 
 ### 9.下载并使用
 ```
