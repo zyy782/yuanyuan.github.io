@@ -63,3 +63,5 @@
 + [透传与组件传值](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/17attrs.md)
 ## 2023 01
 + [npm发布组件](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/npm.md)
+## 2023 03
++ [vue3升级避坑指南](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/01.md)
