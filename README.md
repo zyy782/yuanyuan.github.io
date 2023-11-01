@@ -65,3 +65,5 @@
 + [npm发布组件](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/npm.md)
 ## 2023 03
 + [vue3升级避坑指南](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/01.md)
+## 2023 10
++ [为何遍历请求，拿到的数据可以打印但实际为空](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/19.md)
