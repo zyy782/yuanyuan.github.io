@@ -67,3 +67,11 @@
 + [vue3升级避坑指南](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/01.md)
 ## 2023 10
 + [为何遍历请求，拿到的数据可以打印但实际为空](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/19.md)
+## 2024 01-05
++ [一个刷新问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/20.md)  
++ [某分辨率下样式问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/21.md)
++ [两按钮间多出的间距](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/22.md)
++ [防越权/防重放](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/23.md)
++ [Vue3-事件总线](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/bus.md)
++ [Vue3-Hooks](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/hooks.md)
++ [文件系统fs-extra/fs](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/fs.md)
