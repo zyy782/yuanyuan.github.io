@@ -75,3 +75,8 @@
 + [Vue3-事件总线](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/bus.md)
 + [Vue3-Hooks](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/hooks.md)
 + [文件系统fs-extra/fs](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/fs.md)
+
+## 2024 08
++ [getBoundingClientRect计算不准确？](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/25.md)
++ [vue2/3双向绑定原理](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/02.md)
++ [浏览器并发请求限制](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/04.md)
