@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RequestAnimationFrame Example</title>
+    <style>
+      #container {
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #box {
+        width: 50px;
+        height: 50px;
+        background-color: #ff0000;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="box"></div>
+    </div>
+    <script>
+      /**
+       * 创建了一个红色的方块，并使用requestAnimationFrame来平滑地移动这个方块。
+       * 每当调用requestAnimationFrame时，它都会在下一次重绘之前调用animate函数，更新方块的位置。
+      */
+
+      const container = document.getElementById('container')
+      const box = document.getElementById('box')
+
+      let x = 0
+
+      function animate() {
+        x += 1 // 每次增加1像素
+        box.style.left = x + 'px'
+
+        if (x < container.offsetWidth - box.offsetWidth) {
+          requestAnimationFrame(animate) // 继续动画
+        }
+      }
+
+      animate() // 开始动画
+    </script>
+  </body>
+</html>
