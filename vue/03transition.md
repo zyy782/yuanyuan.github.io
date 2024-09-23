@@ -2,7 +2,8 @@
 #### 触发条件
 + v-if
 + v-show
-+ 由特殊元素 <component> 切换的动态组件
++ 由特殊元素 ```<component>``` 切换的动态组件
++ 改变特殊的 key 属性
 #### 使用示例
 ```
 <button @click="show = !show">显示or隐藏</button>

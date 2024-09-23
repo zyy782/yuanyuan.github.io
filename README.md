@@ -81,3 +81,7 @@
 + [vue2/3双向绑定原理](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/02.md)
 + [浏览器并发请求限制](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTTP/04.md)
 + [BFC/SEO/清除浮动/CSS Reset/重绘与重排](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/16.md)
+
+## 2024 09
++ [meta标签](https://github.com/zyy782/yuanyuan.github.io/blob/main/something/meta.html)
++ [Vue3内置组件学习](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/内置组件.md)
