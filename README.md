@@ -85,3 +85,7 @@
 ## 2024 09
 + [meta标签](https://github.com/zyy782/yuanyuan.github.io/blob/main/something/meta.html)
 + [Vue3内置组件学习](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue3/内置组件.md)
+
+## 2024 10
++ [手写new操作符](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/new.md)
++ [手写Promise](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/myPromise.js)
