@@ -89,3 +89,4 @@
 ## 2024 10
 + [手写new操作符](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/new.md)
 + [手写Promise](https://github.com/zyy782/yuanyuan.github.io/blob/main/Promise/myPromise.js)
++ [手写call/apply/bind](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/手写call、apply、bind.md)
