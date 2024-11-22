@@ -2,7 +2,8 @@
 ## 前言
 ### 1. utils
 开发中自动抽象出的 纯逻辑函数，不存在属于组件的东西，例如methods中定义的纯函数等
-<img src="../pictures/mixins.png" />
+<!-- <img src="../pictures/mixins.png" /> -->
+![mixins](https://img.picgo.net/2024/11/22/mixinsaf1c7e9fd2a2621a.png)
 ### 2. mixins
 #### 什么是mixins
 mixins，即混入，不仅仅在vue框架中存在mixin，确切的说mixin是一种思想，一种混入的思想。混入的内容就是可以在被混入的地方使用，他会自动的将混入的东西准确的分配到指定的组件中。  
