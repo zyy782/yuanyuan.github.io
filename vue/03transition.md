@@ -98,4 +98,5 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 <br/><br/>
 
 附transiton组件渲染周期：
-<img src="../pictures/02.png">
+<!-- <img src="../pictures/02.png"> -->
+![02](https://img.picgo.net/2024/11/22/02c44c90a62d505de2.png)

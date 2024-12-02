@@ -68,7 +68,8 @@ const vMyDirective = {
   }
 }
 ```
-![alt text](image-3.png)
+<!-- ![alt text](image-3.png) -->
+![image 3](https://img.picgo.net/2024/11/22/image-3cda30c7831dd670f.png)
 
 #### 局部指令
 ```
@@ -116,5 +117,8 @@ app.directive('color', (el, binding) => {
   el.style.color = binding.value
 })
 ```
-![alt text](image.png)
-![alt text](image-1.png)
+<!-- ![alt text](image.png)
+![alt text](image-1.png) -->
+
+![image](https://img.picgo.net/2024/11/22/imageefe35f64fedc7212.png)
+![image 1](https://img.picgo.net/2024/11/22/image-188d54ced88c0dd86.png)
