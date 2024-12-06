@@ -18,12 +18,28 @@ Function.prototype.myCall = function (context, ...args) {
   context = context || getGlobal()
   // 因为是在 Function 的原型链 上添加方法，为了 避免 其余 函数对象 的属性名 与 该方法的属性名 冲突，所以需要创建一个唯一的属性名
   const fnSymbol = Symbol()
-  context[fnSymbol] = this
+  // context[fnSymbol] = this
+  Object.defineProperty(context, fnSymbol, {
+    enumerable: false,
+    value: this
+  })
   const result = context[fnSymbol](...args)
   delete context[fnSymbol]
   return result
 }
 ```
+> **为什么 用 Object.defineProperty 来定义属性，而不是直接赋值？**
+> 因为如果直接赋值，context 对象的属性会变成可枚举的，这样在打印 context 对象时，JavaScript 引擎会显示所有属性，包括 Symbol 属性,与原生 call 方法的行为不一致。(demo1)
+> 为了与原生 call 方法的行为一致，myCall 的实现中使用了 Object.defineProperty 来确保 Symbol 属性是不可枚举的，这样在大多数情况下不会影响 context 对象的其他属性。  
+> :smiling_imp:**demo1** **-**  ```context[fnSymbol] = this``` 直接复制:
+> ```
+> function greet (greeting, punctuation) {
+>    console.log(this)
+>  }
+>  const person = { name: 'Alice' }
+>  greet.myCall(person)  // { name: 'Alice', [Symbol()]: [Function: greet] }
+>  greet.call(person) // { name: 'Alice' }
+> ```
 ### 实现手写 apply
 ```
 Function.prototype.myApply = function(context, argArr) {
