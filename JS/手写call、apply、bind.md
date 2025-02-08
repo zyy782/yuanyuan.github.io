@@ -2,7 +2,7 @@
 [call的作用与使用](./07改变this指向的几种方法.md)
 实现手写call的几个关键点：
 1. call的第一个参数是上下文对象，如果传入的是null或undefined，则使用全局对象
-2. call的第二个参数是调用call的函数的参数，这些参数将作为调用call的函数的参数
+2. call的第二个参数是调用call的函数的参数，这些参数将作为调用call的函数的参数(非必填)
 3. 运行调用call的函数，并返回其结果
 4. 函数内部的 this 指向的是 调用该函数的对象
 ```
@@ -42,7 +42,7 @@ Function.prototype.myCall = function (context, ...args) {
 > ```
 ### 实现手写 apply
 ```
-Function.prototype.myApply = function(context, argArr) {
+Function.prototype.myApply = function(context, argArr=[]) {
   context = context || getGlobal()
   const key = Symbol()
   Object.defineProperty(context, key, {

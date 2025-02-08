@@ -94,3 +94,10 @@
 ## 2024 11
 + [diff算法](https://github.com/zyy782/yuanyuan.github.io/blob/main/vue/diff.md)
 + [token存储在cookie还是localStorage?/Cookie的属性介绍](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/26.md)
+## 2025 01 性能优化
++ [性能优化](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/性能优化.md)
++ [使用缓存](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/使用缓存.md)
++ [Webpack打包优化](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/Webpack打包优化.md)
++ [WebWorkers](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/WebWorkers.md)
++ [优化资源加载](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/优化资源加载.md)
++ [优化CSS和JS](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/优化CSS和JS.md)
