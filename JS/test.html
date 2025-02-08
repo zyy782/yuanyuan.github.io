@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BFC 示例</title>
+    <style>
+      .container {
+        border: 2px solid #333;
+        padding: 10px;
+        margin-bottom: 100px;
+      }
+
+      .bfc-container {
+        display: flow-root; /* 创建 BFC */
+        border: 2px solid #f00;
+        padding: 10px;
+      }
+
+      .float-box {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        margin: 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2>不使用 BFC 的情况：</h2>
+    <div class="container">
+      <div class="float-box"></div>
+      <div class="float-box"></div>
+    </div>
+
+    <h2>使用 BFC 的情况：</h2>
+    <div class="bfc-container">
+      <div class="float-box"></div>
+      <div class="float-box"></div>
+    </div> -->
+
+    <button onclick="debounce(test, 2000, false)()">test</button>
+    <button onclick="testThrottle">throttle</button>
+
+    <script>
+      const debounce = (fn, delay, immediate) => {
+        let timer = null
+        return function () {
+          let context = this
+          let args = arguments
+
+          if (timer) clearTimeout(timer)
+
+          /**
+           * 当 immediate 为 true 时，
+           * 如果当前没有等待执行的函数（即 timer 为 null），那么函数会立即执行，
+           * 并设置一个定时器，在延迟时间结束后清除 timer。
+           * 如果当前有等待执行的函数，那么不会立即执行函数，而是等待当前的函数执行完毕。
+           * 这样就能确保函数在每个延迟周期内最多只执行一次
+           */
+
+          if (immediate) {
+            let callNow = !timer
+            if (callNow) fn.apply(context, args)
+            console.log('timer1111', timer)
+            timer = setTimeout(() => {
+              timer = null
+            }, delay)
+            console.log('timer2222', timer)
+          } else {
+            timer = setTimeout(() => {
+              fn.apply(context, args)
+            }, delay)
+          }
+        }
+      }
+
+      const throttle = (fn, delay) => {
+        let lastTime = 0
+        return function () {
+          let context = this
+          let args = arguments
+          let now = new Date().getTime()
+          if (now - lastTime >= delay) {
+            fn.apply(context, args)
+            lastTime = now
+          }
+        }
+      }
+
+      function test() {
+        console.log('test')
+      }
+
+      function testThrottle() {
+        console.log('throttle')
+      }
+    </script>
+  </body>
+</html>
