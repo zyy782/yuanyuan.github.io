@@ -101,3 +101,6 @@
 + [WebWorkers](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/WebWorkers.md)
 + [优化资源加载](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/优化资源加载.md)
 + [优化CSS和JS](https://github.com/zyy782/yuanyuan.github.io/blob/main/性能优化/优化CSS和JS.md)
+
+## 2025 03
++ [Shadow DOM](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/shadomDom/ShadowDOM.md)
