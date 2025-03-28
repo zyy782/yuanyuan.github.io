@@ -67,10 +67,10 @@ Shadow DOM 通过创建一个**隔离的 DOM 树**，解决这些问题。
 
 **效果**：  
 - `<p>` 标签的红色样式不会影响主文档中的其他段落。
-  <img src="../../pictures/shadow1.png">
+  <img src="../pictures/shadow1.png">
 - 主文档无法直接通过 `document.querySelector` 访问 Shadow DOM 内部元素，可以通过 `shadowRoot.querySelector` 访问。
 
-<img src="../../pictures/shadow2.png">
+<img src="../pictures/shadow2.png">
 
 ---
 
