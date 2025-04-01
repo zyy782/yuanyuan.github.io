@@ -111,3 +111,7 @@
 + [CSS in JS](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTML&CSS/CssInJs.md)
 + [Shadow DOM](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTML&CSS/ShadowDOM.md)
 + [BEM命名规范](https://github.com/zyy782/yuanyuan.github.io/blob/main/HTML&CSS/BEM.md)
+
+# 2025 04
++ [快速上手Vuex&Pinia指南](https://github.com/zyy782/yuanyuan.github.io/blob/main/Vuex&Pinia/01.md)
+
