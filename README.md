@@ -117,4 +117,4 @@
 
 # 2025 05
 + [Nuxt小记](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/nuxt01.md)
-+ [setPageLayout动态布局](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/onServerPrefetch.md)
++ [setPageLayout动态布局](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/setPageLayout.md)
