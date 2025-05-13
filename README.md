@@ -116,4 +116,5 @@
 + [快速上手Vuex&Pinia指南](https://github.com/zyy782/yuanyuan.github.io/blob/main/Vuex&Pinia/01.md)
 
 # 2025 05
-+ [Nuxt小记](https://github.com/zyy782/yuanyuan.github.io/blob/main/work/28.md)
++ [Nuxt小记](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/nuxt01.md)
++ [setPageLayout动态布局](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/onServerPrefetch.md)
