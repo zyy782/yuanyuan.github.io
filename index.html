@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术博客 | 个人技术笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        nav {
+            background-color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav h2 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        nav li {
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav li:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .content h2 {
+            margin-bottom: 1.5rem;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content h3 {
+            margin: 1.5rem 0 1rem;
+            color: #555;
+        }
+        
+        .content ul {
+            list-style: none;
+            margin-left: 1rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            color: #666;
+            background-color: white;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .search-container {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        #search-input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        #search-btn {
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #search-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .search-results {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .search-results h3 {
+            margin-bottom: 0.5rem;
+            color: #3498db;
+        }
+        
+        .search-results ul {
+            margin-left: 0;
+        }
+        
+        .no-results {
+            color: #666;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            .search-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>技术博客</h1>
+        <p>记录技术问题，分享解决方案</p>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <h2>快速导航</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="搜索文章...">
+                <button id="search-btn">搜索</button>
+            </div>
+            <ul>
+                <li><a href="#js">JavaScript</a></li>
+                <li><a href="#vue">Vue</a></li>
+                <li><a href="#http">HTTP</a></li>
+                <li><a href="#promise">Promise</a></li>
+                <li><a href="#performance">性能优化</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#nuxt">Nuxt</a></li>
+                <li><a href="#work">工作笔记</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <section id="js" class="section">
+                <h2>JavaScript</h2>
+                <ul>
+                    <li><a href="JS/01data.md">数据处理(对象数组)</a></li>
+                    <li><a href="JS/图片遍历问题.md">图片遍历问题</a></li>
+                    <li><a href="JS/02闭包.md">闭包</a></li>
+                    <li><a href="JS/03箭头函数的优势.md">箭头函数</a></li>
+                    <li><a href="JS/05数组去重的几种方法.md">数组去重</a></li>
+                    <li><a href="JS/06实现深拷贝.md">实现深拷贝</a></li>
+                    <li><a href="JS/07改变this指向的几种方法.md">改变this指向的三种方法</a></li>
+                    <li><a href="JS/08事件循环机制.md">事件循环</a></li>
+                    <li><a href="JS/09事件委托.md">事件委托</a></li>
+                    <li><a href="JS/10内存泄漏.md">内存泄漏</a></li>
+                    <li><a href="JS/13.md">ES6新增运算符</a></li>
+                    <li><a href="JS/14.md">你不知道的JavaScript（中）学习记录</a></li>
+                    <li><a href="JS/new.md">手写new操作符</a></li>
+                    <li><a href="JS/手写call、apply、bind.md">手写call/apply/bind</a></li>
+                </ul>
+            </section>
+            
+            <section id="vue" class="section">
+                <h2>Vue</h2>
+                <h3>Vue 2</h3>
+                <ul>
+                    <li><a href="vue/01key.md">v-for中的 key</a></li>
+                    <li><a href="vue/02publish.md">npm publish 403</a></li>
+                    <li><a href="vue/render.md">render</a></li>
+                    <li><a href="vue/03transition.md">vue内置组件 Transition</a></li>
+                    <li><a href="vue/diff.md">diff算法</a></li>
+                </ul>
+                <h3>Vue 3</h3>
+                <ul>
+                    <li><a href="vue3/01.md">vue3升级避坑指南</a></li>
+                    <li><a href="vue3/02.md">vue2/3双向绑定原理</a></li>
+                    <li><a href="vue3/bus.md">Vue3-事件总线</a></li>
+                    <li><a href="vue3/hooks.md">Vue3-Hooks</a></li>
+                    <li><a href="vue3/内置组件.md">Vue3内置组件学习</a></li>
+                </ul>
+                <h3>Vuex & Pinia</h3>
+                <ul>
+                    <li><a href="Vuex&Pinia/01.md">快速上手Vuex&Pinia指南</a></li>
+                </ul>
+            </section>
+            
+            <section id="http" class="section">
+                <h2>HTTP</h2>
+                <ul>
+                    <li><a href="HTTP/TCP传输数据的理解.md">TCP通信三个步骤</a></li>
+                    <li><a href="HTTP/02.md">关于http协议</a></li>
+                    <li><a href="HTTP/03.md">前端性能优化与常见安全性问题</a></li>
+                    <li><a href="HTTP/04.md">浏览器并发请求限制</a></li>
+                </ul>
+            </section>
+            
+            <section id="promise" class="section">
+                <h2>Promise</h2>
+                <ul>
+                    <li><a href="Promise/01预备知识.md">预备知识</a></li>
+                    <li><a href="Promise/02基本使用.md">基本使用</a></li>
+                    <li><a href="Promise/03API使用.md">API</a></li>
+                    <li><a href="Promise/04几个关键问题.md">几个关键问题</a></li>
+                    <li><a href="Promise/08js宏队列与微队列.md">宏队列与微队列</a></li>
+                    <li><a href="Promise/promiseList的一个题.md">顺序执行promiselist</a></li>
+                    <li><a href="Promise/myPromise.js">手写Promise</a></li>
+                </ul>
+            </section>
+            
+            <section id="performance" class="section">
+                <h2>性能优化</h2>
+                <ul>
+                    <li><a href="性能优化/性能优化.md">性能优化</a></li>
+                    <li><a href="性能优化/使用缓存.md">使用缓存</a></li>
+                    <li><a href="性能优化/Webpack打包优化.md">Webpack打包优化</a></li>
+                    <li><a href="性能优化/WebWorkers.md">WebWorkers</a></li>
+                    <li><a href="性能优化/优化资源加载.md">优化资源加载</a></li>
+                    <li><a href="性能优化/优化CSS和JS.md">优化CSS和JS</a></li>
+                </ul>
+            </section>
+            
+            <section id="css" class="section">
+                <h2>CSS样式管理</h2>
+                <ul>
+                    <li><a href="HTML&CSS/CSSModules.md">CSS Modules</a></li>
+                    <li><a href="HTML&CSS/CssInJs.md">CSS in JS</a></li>
+                    <li><a href="HTML&CSS/ShadowDOM.md">Shadow DOM</a></li>
+                    <li><a href="HTML&CSS/BEM.md">BEM命名规范</a></li>
+                    <li><a href="HTML&CSS/浏览器兼容性问题.md">浏览器兼容性问题</a></li>
+                </ul>
+            </section>
+            
+            <section id="nuxt" class="section">
+                <h2>Nuxt</h2>
+                <ul>
+                    <li><a href="Nuxt/nuxt01.md">Nuxt小记</a></li>
+                    <li><a href="Nuxt/setPageLayout.md">setPageLayout动态布局</a></li>
+                </ul>
+            </section>
+            
+            <section id="work" class="section">
+                <h2>工作笔记</h2>
+                <ul>
+                    <li><a href="work/01.md">解决强制修改组件样式失败问题</a></li>
+                    <li><a href="work/02.md">异形swiper---前面左对齐，最后右对齐</a></li>
+                    <li><a href="work/03.md">父子传值--解决子组件修改父组件值失败的问题</a></li>
+                    <li><a href="work/04.md">总结1</a></li>
+                    <li><a href="work/05.md">一个computed的常用场景</a></li>
+                    <li><a href="work/06.md">组件复用</a></li>
+                    <li><a href="work/07.md">"toJSON" is not defined 解决方法</a></li>
+                    <li><a href="work/08.md">前端性能优化</a></li>
+                    <li><a href="work/09.md">过滤器filters</a></li>
+                    <li><a href="work/10.md">路由跳转</a></li>
+                    <li><a href="work/11.md">RegExp</a></li>
+                    <li><a href="work/12.md">Array与提高开发效率的一些小技巧</a></li>
+                    <li><a href="work/13.md">Symbol</a></li>
+                    <li><a href="work/15.md">mock与Apipost的基本使用</a></li>
+                    <li><a href="work/16component.md">component 动态加载组件</a></li>
+                    <li><a href="work/17attrs.md">透传与组件传值</a></li>
+                    <li><a href="work/npm.md">npm发布组件</a></li>
+                    <li><a href="work/19.md">为何遍历请求，拿到的数据可以打印但实际为空</a></li>
+                    <li><a href="work/20.md">一个刷新问题</a></li>
+                    <li><a href="work/21.md">某分辨率下样式问题</a></li>
+                    <li><a href="work/22.md">两按钮间多出的间距</a></li>
+                    <li><a href="work/23.md">防越权/防重放</a></li>
+                    <li><a href="work/fs.md">文件系统fs-extra/fs</a></li>
+                    <li><a href="work/25.md">getBoundingClientRect计算不准确？</a></li>
+                    <li><a href="work/26.md">token存储在cookie还是localStorage?/Cookie的属性介绍</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 技术博客 | 个人技术笔记</p>
+    </footer>
+    
+    <script>
+        // 收集所有文章数据
+        const articles = [
+            { title: '数据处理(对象数组)', url: 'JS/01data.md', category: 'JavaScript' },
+            { title: '图片遍历问题', url: 'JS/图片遍历问题.md', category: 'JavaScript' },
+            { title: '闭包', url: 'JS/02闭包.md', category: 'JavaScript' },
+            { title: '箭头函数', url: 'JS/03箭头函数的优势.md', category: 'JavaScript' },
+            { title: '数组去重', url: 'JS/05数组去重的几种方法.md', category: 'JavaScript' },
+            { title: '实现深拷贝', url: 'JS/06实现深拷贝.md', category: 'JavaScript' },
+            { title: '改变this指向的三种方法', url: 'JS/07改变this指向的几种方法.md', category: 'JavaScript' },
+            { title: '事件循环', url: 'JS/08事件循环机制.md', category: 'JavaScript' },
+            { title: '事件委托', url: 'JS/09事件委托.md', category: 'JavaScript' },
+            { title: '内存泄漏', url: 'JS/10内存泄漏.md', category: 'JavaScript' },
+            { title: 'ES6新增运算符', url: 'JS/13.md', category: 'JavaScript' },
+            { title: '你不知道的JavaScript（中）学习记录', url: 'JS/14.md', category: 'JavaScript' },
+            { title: '手写new操作符', url: 'JS/new.md', category: 'JavaScript' },
+            { title: '手写call/apply/bind', url: 'JS/手写call、apply、bind.md', category: 'JavaScript' },
+            
+            { title: 'v-for中的 key', url: 'vue/01key.md', category: 'Vue 2' },
+            { title: 'npm publish 403', url: 'vue/02publish.md', category: 'Vue 2' },
+            { title: 'render', url: 'vue/render.md', category: 'Vue 2' },
+            { title: 'vue内置组件 Transition', url: 'vue/03transition.md', category: 'Vue 2' },
+            { title: 'diff算法', url: 'vue/diff.md', category: 'Vue 2' },
+            
+            { title: 'vue3升级避坑指南', url: 'vue3/01.md', category: 'Vue 3' },
+            { title: 'vue2/3双向绑定原理', url: 'vue3/02.md', category: 'Vue 3' },
+            { title: 'Vue3-事件总线', url: 'vue3/bus.md', category: 'Vue 3' },
+            { title: 'Vue3-Hooks', url: 'vue3/hooks.md', category: 'Vue 3' },
+            { title: 'Vue3内置组件学习', url: 'vue3/内置组件.md', category: 'Vue 3' },
+            
+            { title: '快速上手Vuex&Pinia指南', url: 'Vuex&Pinia/01.md', category: 'Vuex & Pinia' },
+            
+            { title: 'TCP通信三个步骤', url: 'HTTP/TCP传输数据的理解.md', category: 'HTTP' },
+            { title: '关于http协议', url: 'HTTP/02.md', category: 'HTTP' },
+            { title: '前端性能优化与常见安全性问题', url: 'HTTP/03.md', category: 'HTTP' },
+            { title: '浏览器并发请求限制', url: 'HTTP/04.md', category: 'HTTP' },
+            
+            { title: '预备知识', url: 'Promise/01预备知识.md', category: 'Promise' },
+            { title: '基本使用', url: 'Promise/02基本使用.md', category: 'Promise' },
+            { title: 'API', url: 'Promise/03API使用.md', category: 'Promise' },
+            { title: '几个关键问题', url: 'Promise/04几个关键问题.md', category: 'Promise' },
+            { title: '宏队列与微队列', url: 'Promise/08js宏队列与微队列.md', category: 'Promise' },
+            { title: '顺序执行promiselist', url: 'Promise/promiseList的一个题.md', category: 'Promise' },
+            { title: '手写Promise', url: 'Promise/myPromise.js', category: 'Promise' },
+            
+            { title: '性能优化', url: '性能优化/性能优化.md', category: '性能优化' },
+            { title: '使用缓存', url: '性能优化/使用缓存.md', category: '性能优化' },
+            { title: 'Webpack打包优化', url: '性能优化/Webpack打包优化.md', category: '性能优化' },
+            { title: 'WebWorkers', url: '性能优化/WebWorkers.md', category: '性能优化' },
+            { title: '优化资源加载', url: '性能优化/优化资源加载.md', category: '性能优化' },
+            { title: '优化CSS和JS', url: '性能优化/优化CSS和JS.md', category: '性能优化' },
+            
+            { title: 'CSS Modules', url: 'HTML&CSS/CSSModules.md', category: 'CSS样式管理' },
+            { title: 'CSS in JS', url: 'HTML&CSS/CssInJs.md', category: 'CSS样式管理' },
+            { title: 'Shadow DOM', url: 'HTML&CSS/ShadowDOM.md', category: 'CSS样式管理' },
+            { title: 'BEM命名规范', url: 'HTML&CSS/BEM.md', category: 'CSS样式管理' },
+            { title: '浏览器兼容性问题', url: 'HTML&CSS/浏览器兼容性问题.md', category: 'CSS样式管理' },
+            
+            { title: 'Nuxt小记', url: 'Nuxt/nuxt01.md', category: 'Nuxt' },
+            { title: 'setPageLayout动态布局', url: 'Nuxt/setPageLayout.md', category: 'Nuxt' },
+            
+            { title: '解决强制修改组件样式失败问题', url: 'work/01.md', category: '工作笔记' },
+            { title: '异形swiper---前面左对齐，最后右对齐', url: 'work/02.md', category: '工作笔记' },
+            { title: '父子传值--解决子组件修改父组件值失败的问题', url: 'work/03.md', category: '工作笔记' },
+            { title: '总结1', url: 'work/04.md', category: '工作笔记' },
+            { title: '一个computed的常用场景', url: 'work/05.md', category: '工作笔记' },
+            { title: '组件复用', url: 'work/06.md', category: '工作笔记' },
+            { title: '"toJSON" is not defined 解决方法', url: 'work/07.md', category: '工作笔记' },
+            { title: '前端性能优化', url: 'work/08.md', category: '工作笔记' },
+            { title: '过滤器filters', url: 'work/09.md', category: '工作笔记' },
+            { title: '路由跳转', url: 'work/10.md', category: '工作笔记' },
+            { title: 'RegExp', url: 'work/11.md', category: '工作笔记' },
+            { title: 'Array与提高开发效率的一些小技巧', url: 'work/12.md', category: '工作笔记' },
+            { title: 'Symbol', url: 'work/13.md', category: '工作笔记' },
+            { title: 'mock与Apipost的基本使用', url: 'work/15.md', category: '工作笔记' },
+            { title: 'component 动态加载组件', url: 'work/16component.md', category: '工作笔记' },
+            { title: '透传与组件传值', url: 'work/17attrs.md', category: '工作笔记' },
+            { title: 'npm发布组件', url: 'work/npm.md', category: '工作笔记' },
+            { title: '为何遍历请求，拿到的数据可以打印但实际为空', url: 'work/19.md', category: '工作笔记' },
+            { title: '一个刷新问题', url: 'work/20.md', category: '工作笔记' },
+            { title: '某分辨率下样式问题', url: 'work/21.md', category: '工作笔记' },
+            { title: '两按钮间多出的间距', url: 'work/22.md', category: '工作笔记' },
+            { title: '防越权/防重放', url: 'work/23.md', category: '工作笔记' },
+            { title: '文件系统fs-extra/fs', url: 'work/fs.md', category: '工作笔记' },
+            { title: 'getBoundingClientRect计算不准确？', url: 'work/25.md', category: '工作笔记' },
+            { title: 'token存储在cookie还是localStorage?/Cookie的属性介绍', url: 'work/26.md', category: '工作笔记' }
+        ];
+        
+        // 搜索功能
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        
+        // 为搜索按钮添加点击事件
+        searchBtn.addEventListener('click', performSearch);
+        
+        // 为输入框添加回车事件
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            
+            if (!searchTerm) {
+                alert('请输入搜索关键词');
+                return;
+            }
+            
+            // 过滤匹配的文章
+            const results = articles.filter(article => {
+                return article.title.toLowerCase().includes(searchTerm) || 
+                       article.category.toLowerCase().includes(searchTerm);
+            });
+            
+            // 显示搜索结果
+            displayResults(results, searchTerm);
+        }
+        
+        function displayResults(results, searchTerm) {
+            // 检查是否已存在搜索结果容器
+            let resultsContainer = document.querySelector('.search-results');
+            
+            // 如果不存在，创建一个
+            if (!resultsContainer) {
+                resultsContainer = document.createElement('div');
+                resultsContainer.className = 'search-results';
+                document.querySelector('.content').insertBefore(resultsContainer, document.querySelector('.content section:first-child'));
+            }
+            
+            // 清空容器
+            resultsContainer.innerHTML = '';
+            
+            // 添加标题
+            const title = document.createElement('h3');
+            title.textContent = `搜索结果: "${searchTerm}"`;
+            resultsContainer.appendChild(title);
+            
+            // 添加结果列表
+            const ul = document.createElement('ul');
+            
+            if (results.length === 0) {
+                const li = document.createElement('li');
+                li.className = 'no-results';
+                li.textContent = '没有找到匹配的文章';
+                ul.appendChild(li);
+            } else {
+                results.forEach(article => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = article.url;
+                    a.textContent = `${article.category}: ${article.title}`;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+            }
+            
+            resultsContainer.appendChild(ul);
+        }
+    </script>
+</body>
+</html>

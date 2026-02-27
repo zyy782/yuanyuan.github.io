@@ -240,3 +240,59 @@ const { data, pending, error } = await useAsyncData('exampleData', async () => {
 - **`useAsyncData`**：
   - 适合复杂的数据获取逻辑，或需要在普通组件中加载数据。
   - 更灵活，适合与组合式 API 搭配使用。
+
+
+### 6. ```useState```
+```useState``` 是 Nuxt 3 提供的一个组合式 API，用于创建跨组件的响应式状态。它的主要特点是：
+1. 服务端和客户端状态同步
+在服务端设置的状态会自动同步到客户端
+避免了服务端和客户端状态不一致的问题
+```
+<script setup>
+const data = useState('apiData', () => null)
+
+// 在服务端预取数据
+onServerPrefetch(async () => {
+  const response = await fetch('https://api.example.com/data')
+  data.value = await response.json()
+})
+</script>
+```
+2. 状态持久化
+状态在页面刷新后仍然保持
+适合存储需要在多个组件间共享的数据
+
+#### 注意事项
+1. **状态持久化**
++ 状态会保存在内存中，页面刷新后重置
++ 如果需要持久化，建议配合 localStorage 或 sessionStorage
+2. 性能考虑
++ 不要存储过大的数据
++ 及时清理不需要的状态
+3. 服务端渲染
++ 确保服务端和客户端的状态初始化逻辑一致
++ 避免在服务端和客户端产生不同的状态
+
+4. 命名必须保证全局唯一性
+useState 的 key 在整个应用中必须是唯一的
+如果使用相同的 key，会导致状态被覆盖或共享
+命名建议：
+```
+// 推荐：使用模块前缀避免冲突
+const userProfile = useState('user:profile', () => null)
+const cartItems = useState('cart:items', () => [])
+
+// 或者使用更具体的命名
+const userProfileState = useState('userProfileState', () => null)
+const cartItemsState = useState('cartItemsState', () => [])
+
+// 使用模块化命名和常量相结合的方式
+// 在 constants/state.ts 中定义
+export const STATE_KEYS = {
+  USER_PROFILE: 'user:profile',
+  CART_ITEMS: 'cart:items',
+  THEME: 'app:theme'
+} as const
+// 在组件中使用
+const userProfile = useState(STATE_KEYS.USER_PROFILE, () => null)
+```

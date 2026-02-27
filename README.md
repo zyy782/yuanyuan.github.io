@@ -1,4 +1,25 @@
 # yuanyuan.github.io
+
+## 技术博客
+
+这是一个个人技术博客，用于记录平时遇到的技术问题并分析解决方案。
+
+### 访问首页
+[博客首页](http://localhost:8000) | [GitHub仓库](https://github.com/zyy782/yuanyuan.github.io)
+
+### 目录结构
+- `index.html` - 博客首页，提供导航和内容索引
+- `JS/` - JavaScript相关笔记和代码
+- `Vue/` - Vue 2相关笔记
+- `Vue3/` - Vue 3相关笔记
+- `HTTP/` - HTTP协议相关笔记
+- `Promise/` - Promise相关笔记和实现
+- `性能优化/` - 前端性能优化相关笔记
+- `HTML&CSS/` - HTML和CSS相关笔记
+- `Nuxt/` - Nuxt框架相关笔记
+- `work/` - 工作中遇到的问题和解决方案
+
+
 ## JS
 + [数据处理(对象数组)](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/01data.md)
 + [图片遍历问题](https://github.com/zyy782/yuanyuan.github.io/blob/main/JS/%E5%9B%BE%E7%89%87%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98.md)
@@ -118,3 +139,5 @@
 # 2025 05
 + [Nuxt小记](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/nuxt01.md)
 + [setPageLayout动态布局](https://github.com/zyy782/yuanyuan.github.io/blob/main/Nuxt/setPageLayout.md)
+
+# 2025 08
