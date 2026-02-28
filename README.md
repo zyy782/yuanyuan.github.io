@@ -5,7 +5,7 @@
 这是一个个人技术博客，用于记录平时遇到的技术问题并分析解决方案。
 
 ### 访问首页
-[博客首页](http://localhost:8000) | [GitHub仓库](https://github.com/zyy782/yuanyuan.github.io)
+[本地访问](http://localhost:8000) | [GitHub Pages](https://zyy782.github.io/yuanyuan.github.io/) | [GitHub仓库](https://github.com/zyy782/yuanyuan.github.io)
 
 ### 目录结构
 - `index.html` - 博客首页，提供导航和内容索引
